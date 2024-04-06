@@ -2,23 +2,25 @@
  *
  * @section genDesc General Description
  *
- * This section describes how the program works.
+ *El programa implementa una función que controla un display LCD utilizando pines GPIO específicos para cada dígito.
+ *La función recibe un valor de 32 bits, lo descompone en sus dígitos individuales y los muestra en el display LCD, siguiendo un mapeo 
+ *predefinido entre los dígitos del LCD y los pines GPIO.
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
  * @section hardConn Hardware Connection
  *
-* |   Display      |   EDU-CIAA	|
- * |:--------------:|:-------------:|
- * | 	Vcc 	    |	5V      	|
- * | 	BCD1		| 	GPIO_20		|
- * | 	BCD2	 	| 	GPIO_21		|
- * | 	BCD3	 	| 	GPIO_22		|
- * | 	BCD4	 	| 	GPIO_23		|
- * | 	SEL1	 	| 	GPIO_19		|
- * | 	SEL2	 	| 	GPIO_18		|
- * | 	SEL3	 	| 	GPIO_9		|
- * | 	Gnd 	    | 	GND     	|
+ * |   Display   |   EDU-CIAA	|
+ * |:----------:|:-------------:|
+ * | 	Vcc     |	5V      	|
+ * | 	D1		| 	GPIO_20		|
+ * | 	D2	 	| 	GPIO_21		|
+ * | 	D3	 	| 	GPIO_22		|
+ * | 	D4	 	| 	GPIO_23		|
+ * | 	SEL1	| 	GPIO_19		|
+ * | 	SEL2	| 	GPIO_18		|
+ * | 	SEL3	| 	GPIO_9		|
+ * | 	Gnd 	| 	GND     	|
  *
  *
  * @section changelog Changelog
@@ -50,14 +52,15 @@ typedef struct
 } gpioConf_t;
 
 /**
- * @brief Convierte el dato recibido a BCD, guardando cada uno de los digitos de salida en un arreglo.
- * 
+ * @brief toma el dato recibido, lo descompone en la cantidad de digitos especificada y luego los convierte a BCD, almacenandolos
+ * en un arreglo pasado como puntero.
+ *  
  * @param data numero.
  * @param digits cantidad de digitos que componen el dato.
  * @param bcd_number arreglo por referencia.
  * @return retorna un cero (0). 
  */
-int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number) //funcion que cconvierte el dato recibido a BCD
+int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number) 
 {
 	for( int8_t i=digits-1; i>=0; i--){
 	bcd_number[i]= data % 10;
@@ -67,18 +70,20 @@ int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number) 
 }
 
 /**
- * @brief  Cambia el estado de cada GPIO segun el estado del bit correspondiente en el BCD ingresado. 
+ * @brief recibe un dígito en formato BCD (bcd_digit) y un arreglo de estructuras gpioConf_t (gpio_conf)
+ * que mapea los bits del dígito a los pines GPIO. La función recorre cada bit del dígito BCD y cambia el estado del pin GPIO correspondiente
+ * según los bits del dígito BCD recibido.
  * 
  * @param digito_BCD un digito del cero al nueve (0-9)
  * @param p arreglo de estructura del tipo gpioConf_t.
  * 
  */
-void cambio_estado_GPIO(uint8_t digito_BCD, gpioConf_t *p )// función que reciba como parámetro un dígito BCD y un vector de estructuras del tipo gpioConf_
+void cambio_estado_GPIO(uint8_t digito_BCD, gpioConf_t *p )
 { 
 	uint8_t MASK_BIT_1=1; //00000001
 	for(int i=0; i<=3; i++){
 		if(MASK_BIT_1 & digito_BCD)
-		{//00000001 la mascara con un 1 en el bit menos significativo
+		{
 				GPIOOn(p[i].pin);
 			}
 			else{
@@ -88,28 +93,20 @@ void cambio_estado_GPIO(uint8_t digito_BCD, gpioConf_t *p )// función que recib
 	}
 }
 /**
- * @brief Muestra por display el valor del dato que recibe conviertiendo el mismo a bcd, luego el mapeo de los puertos con el digito del lcd. 
+ * @brief La función descompone el dato en dígitos individuales utilizando la función convertToBcdArray. Luego, para cada dígito, 
+ * cambia el estado de los pines GPIO según el valor del dígito (usando la función cambio_estado_GPIO), enciende el pin correspondiente 
+ * al dígito en el LCD (GPIOOn), y finalmente, lo apaga (GPIOOff). Esto permite mostrar el valor completo en el display LCD utilizando 
+ * los pines GPIO adecuados y siguiendo el mapeo especificado.
  *
  * @param digito_BCD dato. 
- * @param cant_digitos cantidad de digitos del que esta compuesto el dato ingresado.
+ * @param cant_digitos cantidad de digitos del que esta compuesto el dato.
  * @param pos arreglo de estructura gpioConf_t.
  * @param bcd arreglo de estructura gpioConf_t.
  * 
  */
-/*Escriba una función que reciba un dato de 32 bits,  la cantidad de dígitos de salida y dos vectores
-de estructuras del tipo  gpioConf_t. Uno  de estos vectores es igual al definido en el punto anterior
-y el otro vector mapea los puertos con el dígito del LCD a donde mostrar un dato:
-Dígito 1 -> GPIO_19
-Dígito 2 -> GPIO_18
-Dígito 3 -> GPIO_9
-
-La función deberá mostrar por display el valor que recibe. Reutilice las 
-funciones creadas en el punto 4 y 5. Realice la documentación de este ejercicio usando Doxygen.*/
-
 void mostrar_desplay(uint32_t digito_BCD, uint8_t cant_digitos, gpioConf_t *pos, gpioConf_t *bcd){
-	//digito BCD es el que entra del punto 4 ejemplo 123
 	uint8_t arreglo[cant_digitos];
-	convertToBcdArray (digito_BCD,cant_digitos, arreglo); //aca ya tengo la division del digito en cada uno de los lugares del vector 
+	convertToBcdArray (digito_BCD,cant_digitos, arreglo); 
 	for( uint8_t i=0; i<4; i++){
 		cambio_estado_GPIO(arreglo[i], bcd);
 		GPIOOn(pos[i].pin);
@@ -126,7 +123,7 @@ gpioConf_t pines_bcd[4] = {{GPIO_20, GPIO_OUTPUT},
 					     	{GPIO_22, GPIO_OUTPUT}, 
 							{GPIO_23, GPIO_OUTPUT}};
 
-for (int i=0; i<=3; i++){ //creo que asi inicializaria los pines
+for (int i=0; i<=3; i++){ 
 	GPIOInit(pines_bcd[i].pin, pines_bcd[i].dir);
 }
 
@@ -135,7 +132,7 @@ gpioConf_t gpio_pos[3] = {{GPIO_19, GPIO_OUTPUT},
 							{GPIO_18, GPIO_OUTPUT}, 
 					     	{GPIO_9, GPIO_OUTPUT}};
 	
-for (int i=0; i<=3; i++){ //creo que asi inicializaria los pines de salida para el display
+for (int i=0; i<=3; i++){ 
 	GPIOInit(gpio_pos[i].pin, gpio_pos[i].dir);
 }
 
