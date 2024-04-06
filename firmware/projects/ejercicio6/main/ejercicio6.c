@@ -8,18 +8,26 @@
  *
  * @section hardConn Hardware Connection
  *
- * |    Peripheral  |   ESP32   	|
- * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
+* |   Display      |   EDU-CIAA	|
+ * |:--------------:|:-------------:|
+ * | 	Vcc 	    |	5V      	|
+ * | 	BCD1		| 	GPIO_20		|
+ * | 	BCD2	 	| 	GPIO_21		|
+ * | 	BCD3	 	| 	GPIO_22		|
+ * | 	BCD4	 	| 	GPIO_23		|
+ * | 	SEL1	 	| 	GPIO_19		|
+ * | 	SEL2	 	| 	GPIO_18		|
+ * | 	SEL3	 	| 	GPIO_9		|
+ * | 	Gnd 	    | 	GND     	|
  *
  *
  * @section changelog Changelog
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation		                         |
+ * | 15/03/2024 | Document creation		                         |
  *
- * @author Albano Peñalva (albano.penalva@uner.edu.ar)
+ * @author Guerrero Doris Micaela (doris.guerrero@ingenieria.uner.edu.ar)
  *
  */
 
@@ -35,20 +43,20 @@
 
 /*==================[external functions definition]==========================*/
 
-/*Escriba una función que reciba un dato de 32 bits,  la cantidad de dígitos de salida y dos vectores
-de estructuras del tipo  gpioConf_t. Uno  de estos vectores es igual al definido en el punto anterior
-y el otro vector mapea los puertos con el dígito del LCD a donde mostrar un dato:
-Dígito 1 -> GPIO_19
-Dígito 2 -> GPIO_18
-Dígito 3 -> GPIO_9
-
-La función deberá mostrar por display el valor que recibe. Reutilice las 
-funciones creadas en el punto 4 y 5. Realice la documentación de este ejercicio usando Doxygen.*/
 typedef struct
 {
 	gpio_t pin;			/*!< GPIO pin number */
 	io_t dir;			/*!< GPIO direction '0' IN;  '1' OUT*/
 } gpioConf_t;
+
+/**
+ * @brief Convierte el dato recibido a BCD, guardando cada uno de los digitos de salida en un arreglo.
+ * 
+ * @param data numero.
+ * @param digits cantidad de digitos que componen el dato.
+ * @param bcd_number arreglo por referencia.
+ * @return retorna un cero (0). 
+ */
 int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number) //funcion que cconvierte el dato recibido a BCD
 {
 	for( int8_t i=digits-1; i>=0; i--){
@@ -58,6 +66,13 @@ int8_t  convertToBcdArray (uint32_t data, uint8_t digits, uint8_t * bcd_number) 
 	return(0);
 }
 
+/**
+ * @brief  Cambia el estado de cada GPIO segun el estado del bit correspondiente en el BCD ingresado. 
+ * 
+ * @param digito_BCD un digito del cero al nueve (0-9)
+ * @param p arreglo de estructura del tipo gpioConf_t.
+ * 
+ */
 void cambio_estado_GPIO(uint8_t digito_BCD, gpioConf_t *p )// función que reciba como parámetro un dígito BCD y un vector de estructuras del tipo gpioConf_
 { 
 	uint8_t MASK_BIT_1=1; //00000001
@@ -72,6 +87,24 @@ void cambio_estado_GPIO(uint8_t digito_BCD, gpioConf_t *p )// función que recib
 			MASK_BIT_1 = MASK_BIT_1 << 1;
 	}
 }
+/**
+ * @brief Muestra por display el valor del dato que recibe conviertiendo el mismo a bcd, luego el mapeo de los puertos con el digito del lcd. 
+ *
+ * @param digito_BCD dato. 
+ * @param cant_digitos cantidad de digitos del que esta compuesto el dato ingresado.
+ * @param pos arreglo de estructura gpioConf_t.
+ * @param bcd arreglo de estructura gpioConf_t.
+ * 
+ */
+/*Escriba una función que reciba un dato de 32 bits,  la cantidad de dígitos de salida y dos vectores
+de estructuras del tipo  gpioConf_t. Uno  de estos vectores es igual al definido en el punto anterior
+y el otro vector mapea los puertos con el dígito del LCD a donde mostrar un dato:
+Dígito 1 -> GPIO_19
+Dígito 2 -> GPIO_18
+Dígito 3 -> GPIO_9
+
+La función deberá mostrar por display el valor que recibe. Reutilice las 
+funciones creadas en el punto 4 y 5. Realice la documentación de este ejercicio usando Doxygen.*/
 
 void mostrar_desplay(uint32_t digito_BCD, uint8_t cant_digitos, gpioConf_t *pos, gpioConf_t *bcd){
 	//digito BCD es el que entra del punto 4 ejemplo 123
