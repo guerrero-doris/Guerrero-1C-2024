@@ -1,25 +1,25 @@
 /*! @mainpage Template
  *
  * @section genDesc General Description
- *
- * Medidor de distancia por ultrasonido con interrupciones y puerto serie
- *
+ * Integra diferentes componentes (sensor, LCD, LEDs, switches, UART) y los controla de manera coordinada. Permite 
+ * medir distancias, mostrar resultados, controlar acciones con interruptores y recibir comandos por UART.
+ * 
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
  * @section hardConn Hardware Connection
  *
  * |    Peripheral  |   ESP32   	|
  * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
+ * | 	PIN_X	| 	GPIO_X		|
  *
  *
  * @section changelog Changelog
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation		                         |
+ * | 26/05/2024 | Document creation		                         |
  *
- * @author Albano Peñalva (albano.penalva@uner.edu.ar)
+ * @author Doris Micaela Guerrero (doris.guerrero@ingenieria.uner.edu.ar)
  *
  */
 
@@ -50,7 +50,10 @@ bool hold = false;
 TaskHandle_t tecla_task_handle = NULL;
 TaskHandle_t medicion_task_handle = NULL;
 
-
+/**
+ * @brief Tarea encargada de medir la distancia. Espera una notificación para comenzar la medición, una vez recibida mide. El valor medido 
+ * lo convierte en una cadena de caracteres junto con la unidad "cm" seguida de un salto de línea.
+ */
 void distanciaTask(void *pvParameter){
     uint16_t distancia;
     while(1)
@@ -93,18 +96,29 @@ void distanciaTask(void *pvParameter){
        
     }
 }
-
+/**
+ * @brief envia una notificacion a la tarea para que realice una nueva medición.
+ */
 void FuncTimerA(void* param){
     xTaskNotifyGive(medicion_task_handle); /* Envía una notificación a la tarea asociada a la medicion */
 }
 
-//funcion de interrupcion
+/**
+ * @brief cambia el valor de la variable global 
+ */
 void comienzar_programa(){
      start = !start;
 }
+/**
+ * @brief cambia el valor de la variable global 
+ */
 void hold_medicion(){
       hold=!hold;
 }
+
+/**
+ * @brief  lee un byte del puerto serie UAR y dependiendo del valor recibido ('O' o 'H'), ejecuta una acción específica.
+ */
 void lectura_teclas(){
 uint8_t teclas;
 UartReadByte(UART_PC, &teclas);
@@ -132,23 +146,22 @@ void app_main(void){
 		.func_p= &lectura_teclas,
 		.param_p= NULL,
 	};
-
+     UartInit(&conf_puerto);
     timer_config_t timer_medicion= {
         .timer = TIMER_A,
         .period = CONFIG_BLINK_PERIOD_medicion_US,
         .func_p = FuncTimerA,
         .param_p = NULL
     };
-
-	
-    TimerInit(&timer_medicion);
+     TimerInit(&timer_medicion);
       /* Creación de tareas */
     xTaskCreate(&distanciaTask, "Distancia", 2048, NULL, 5, &medicion_task_handle);
+    /* Creación de interrupciones */
     SwitchActivInt(SWITCH_1, &comienzar_programa, NULL);
     SwitchActivInt(SWITCH_2, &hold_medicion, NULL);
-    
+     /* Inicialización del conteo del timer */
     TimerStart(timer_medicion.timer);
-    UartInit(&conf_puerto); //Recibe una estructura
+    
 
 }
 
