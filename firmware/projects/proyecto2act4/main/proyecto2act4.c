@@ -1,8 +1,9 @@
 /*! @mainpage Template
  *
  * @section genDesc General Description
+ * configura y utiliza una entrada analógica (CH1) para leer valores de una entrada analógica y lo envía a través de UART para su visualización.
+ * y luego se encarga de reproducir una señal ECG almacenada a través de una salida analógica.
  *
- * This section describes how the program works.
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
@@ -64,32 +65,41 @@ const char ecg[BUFFER_SIZE] = {
     74, 67, 71, 78, 72, 67, 73, 81, 77, 71, 75, 84, 79, 77, 77, 76, 76,
 };
 /*==================[internal functions declaration]=========================*/
-
+/**
+ * @brief envia una notificacion a la tarea senial_Task, cuando el timer_medicion_senial alcance su periodo configurado
+ */
 void FuncTimerA(void* param){
-    xTaskNotifyGive(main_task_handle); /* Envía una notificación a la tarea asociada a la medicion */
+    xTaskNotifyGive(main_task_handle); /* Envía una notificación */
 }
+/**
+ * @brief envia una notificacion a la tarea crearECG_Task, cuando el timer_senial_ECG alcance su periodo configurado
+ */
 void FuncTimerB(void* param){
-    xTaskNotifyGive(ECG_task_handle); /* Envía una notificación a la tarea asociada a la medicion */
+    xTaskNotifyGive(ECG_task_handle); /* Envía una notificación*/
 }
-
+/**
+ * @brief  lee un valor de una entrada analógica y lo envía a través de UART para su visualización.
+ */
 void senial_Task(void *pvParameter){
 uint16_t valor;
     while(1)
     {
-     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-     AnalogInputReadSingle(CH1, &valor); //tomo el valor que entra por el canal 1 y lo guardo
-	 //ahora lo mostramos
-	 UartSendString(UART_PC,(char*)UartItoa(valor,10));
-	UartSendString(UART_PC,"\r\n");
+     ulTaskNotifyTake(pdTRUE, portMAX_DELAY); /* recibe la notificacion */
+     AnalogInputReadSingle(CH1, &valor); /* tomo el valor que entra por el canal 1 y lo guardo en valor*/
+	 UartSendString(UART_PC,(char*)UartItoa(valor,10)); /*ahora lo mostramos*/
+	 UartSendString(UART_PC,"\r\n");
 
 	}
 }
+/**
+ * @brief  se encarga de reproducir una señal ECG almacenada a través de una salida analógica.
+ */
 void crearECG_Task(void *pvParameter){
 uint16_t indice=0;
     while(1)
     {
-     ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-	 AnalogOutputWrite(ecg[indice]);
+     ulTaskNotifyTake(pdTRUE, portMAX_DELAY); /* recibe la notificacion */
+	 AnalogOutputWrite(ecg[indice]); /* escribe en la salida analógica el valor correspondiente al índice actual */
 	 indice ++;
 	 if(indice == sizeof(ecg)){
 		indice= 0;
@@ -97,7 +107,7 @@ uint16_t indice=0;
 	}
 }
 
-  
+
 /*==================[external functions definition]==========================*/
 void app_main(void){
 	 timer_config_t timer_medicion_senial= {
@@ -134,12 +144,14 @@ void app_main(void){
 	};
 	TimerInit(&timer_medicion_senial);
 	TimerInit(&timer_senial_ECG);
+
  	AnalogInputInit(&senial_ch1);
 	AnalogOutputInit();
 	UartInit(&conf_puerto);
+	/* Creación de tareas */
 	xTaskCreate(&senial_Task, "senial", 2048, NULL, 5, &main_task_handle);
-	//crear ecg
 	xTaskCreate(&crearECG_Task, "senial_ecg", 2048, NULL, 5, &ECG_task_handle);
+	  /* Inicialización del conteo de los timers */
 	TimerStart(TIMER_A);
 	TimerStart(TIMER_B);
   
