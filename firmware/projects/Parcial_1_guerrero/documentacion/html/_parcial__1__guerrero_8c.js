@@ -1,0 +1,26 @@
+var _parcial__1__guerrero_8c =
+[
+    [ "CONFIG_BLINK_PERIOD_medicion_US", "_parcial__1__guerrero_8c.html#ad4c2441cf961f13d72384212f67413f4", null ],
+    [ "CONFIG_BLINK_PERIOD_medicion_US_ESTADO", "_parcial__1__guerrero_8c.html#af4a146cb48fb9079144c487054cb9e04", null ],
+    [ "TOTAL_BITS", "_parcial__1__guerrero_8c.html#a32f09dc6ffd60fee4ba2e4aef1564505", null ],
+    [ "V_REF", "_parcial__1__guerrero_8c.html#a78bd16b40e563713bb92b7a7d0f10b98", null ],
+    [ "app_main", "_parcial__1__guerrero_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70", null ],
+    [ "encender_programa", "_parcial__1__guerrero_8c.html#a2ec1dd324e085dc6c5fe58bfcfed81e6", null ],
+    [ "FuncTimerA", "_parcial__1__guerrero_8c.html#afaccfed84cd1498a05ea04a65f1209b1", null ],
+    [ "FuncTimerB", "_parcial__1__guerrero_8c.html#a5088c3325764095ca222dc78c328f466", null ],
+    [ "Informar_estado_task", "_parcial__1__guerrero_8c.html#a306e36cca0f2047062ca84f1af35a45a", null ],
+    [ "parar_programa", "_parcial__1__guerrero_8c.html#a2cb832adecf6061b47f73590cc6854f0", null ],
+    [ "senial_medir_task", "_parcial__1__guerrero_8c.html#a8cdbc79e50ebba553e69eed8ae617731", null ],
+    [ "conversion_humedad", "_parcial__1__guerrero_8c.html#a0c74e7b00b333ff10f4b34f31f655267", null ],
+    [ "encender_bomba_agua", "_parcial__1__guerrero_8c.html#a1cb8b80da0619f375e89363154d99f06", null ],
+    [ "encender_SolAcida", "_parcial__1__guerrero_8c.html#acf1c787169bc3f74a7b97d2054e87726", null ],
+    [ "encender_SolBasica", "_parcial__1__guerrero_8c.html#aa3cffe16905274dd9c9541300061230b", null ],
+    [ "hold", "_parcial__1__guerrero_8c.html#af0129e079b57e897edf00f22cc25f3d4", null ],
+    [ "Informar_task_handle", "_parcial__1__guerrero_8c.html#ac6d8aac1a81e3dc990e413e612ed9e3c", null ],
+    [ "medicion_task_handle", "_parcial__1__guerrero_8c.html#ac49675773e8afdad9d8f3691a8abcf6a", null ],
+    [ "ph", "_parcial__1__guerrero_8c.html#aaf53d963ff9bf6063bc8e120de5d84c7", null ],
+    [ "start", "_parcial__1__guerrero_8c.html#ab376b87f96a574a793c03c53e75afec8", null ],
+    [ "valor_humedad", "_parcial__1__guerrero_8c.html#aa84a218c84521cfa29198606dbef8ef5", null ],
+    [ "valor_humedad_umbral", "_parcial__1__guerrero_8c.html#aba3236904a68570ddc35e39a4456c34e", null ],
+    [ "valor_ph", "_parcial__1__guerrero_8c.html#adfddadc53a512ecc6377aea747c2573a", null ]
+];

@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Parcial_1: Referencia del archivo C:/Repositorios/Guerrero-1C-2024/firmware/projects/Parcial_1_guerrero/main/Parcial_1_guerrero.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Parcial_1<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_parcial__1__guerrero_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Parcial_1_guerrero.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+</div>
+<p><a href="_parcial__1__guerrero_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a78bd16b40e563713bb92b7a7d0f10b98" id="r_a78bd16b40e563713bb92b7a7d0f10b98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78bd16b40e563713bb92b7a7d0f10b98">V_REF</a>&#160;&#160;&#160;3.3</td></tr>
+<tr class="separator:a78bd16b40e563713bb92b7a7d0f10b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f09dc6ffd60fee4ba2e4aef1564505" id="r_a32f09dc6ffd60fee4ba2e4aef1564505"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32f09dc6ffd60fee4ba2e4aef1564505">TOTAL_BITS</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="separator:a32f09dc6ffd60fee4ba2e4aef1564505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c2441cf961f13d72384212f67413f4" id="r_ad4c2441cf961f13d72384212f67413f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4c2441cf961f13d72384212f67413f4">CONFIG_BLINK_PERIOD_medicion_US</a>&#160;&#160;&#160;3000000</td></tr>
+<tr class="separator:ad4c2441cf961f13d72384212f67413f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a146cb48fb9079144c487054cb9e04" id="r_af4a146cb48fb9079144c487054cb9e04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4a146cb48fb9079144c487054cb9e04">CONFIG_BLINK_PERIOD_medicion_US_ESTADO</a>&#160;&#160;&#160;5000000</td></tr>
+<tr class="separator:af4a146cb48fb9079144c487054cb9e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:afaccfed84cd1498a05ea04a65f1209b1" id="r_afaccfed84cd1498a05ea04a65f1209b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaccfed84cd1498a05ea04a65f1209b1">FuncTimerA</a> (void *param)</td></tr>
+<tr class="memdesc:afaccfed84cd1498a05ea04a65f1209b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">envia una notificacion a la tarea senial_medir_task, cuando el timer alcance su periodo configurado  <br /></td></tr>
+<tr class="separator:afaccfed84cd1498a05ea04a65f1209b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5088c3325764095ca222dc78c328f466" id="r_a5088c3325764095ca222dc78c328f466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5088c3325764095ca222dc78c328f466">FuncTimerB</a> (void *param)</td></tr>
+<tr class="memdesc:a5088c3325764095ca222dc78c328f466"><td class="mdescLeft">&#160;</td><td class="mdescRight">envia una notificacion a la tarea Informar_estado_Task, cuando el timer alcance su periodo configurado  <br /></td></tr>
+<tr class="separator:a5088c3325764095ca222dc78c328f466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cdbc79e50ebba553e69eed8ae617731" id="r_a8cdbc79e50ebba553e69eed8ae617731"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cdbc79e50ebba553e69eed8ae617731">senial_medir_task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a8cdbc79e50ebba553e69eed8ae617731"><td class="mdescLeft">&#160;</td><td class="mdescRight">lee un valor de una entrada analógica y la convierte a voltios.  <br /></td></tr>
+<tr class="separator:a8cdbc79e50ebba553e69eed8ae617731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a306e36cca0f2047062ca84f1af35a45a" id="r_a306e36cca0f2047062ca84f1af35a45a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a306e36cca0f2047062ca84f1af35a45a">Informar_estado_task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a306e36cca0f2047062ca84f1af35a45a"><td class="mdescLeft">&#160;</td><td class="mdescRight">toma los valores, los compara y enciende o apaga las bombas. Tambien lo envía informacion sobre esto a través de UART para su visualización.  <br /></td></tr>
+<tr class="separator:a306e36cca0f2047062ca84f1af35a45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec1dd324e085dc6c5fe58bfcfed81e6" id="r_a2ec1dd324e085dc6c5fe58bfcfed81e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ec1dd324e085dc6c5fe58bfcfed81e6">encender_programa</a> ()</td></tr>
+<tr class="memdesc:a2ec1dd324e085dc6c5fe58bfcfed81e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">cambia el valor de la variable global  <br /></td></tr>
+<tr class="separator:a2ec1dd324e085dc6c5fe58bfcfed81e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb832adecf6061b47f73590cc6854f0" id="r_a2cb832adecf6061b47f73590cc6854f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2cb832adecf6061b47f73590cc6854f0">parar_programa</a> ()</td></tr>
+<tr class="memdesc:a2cb832adecf6061b47f73590cc6854f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">cambia el valor de la variable global  <br /></td></tr>
+<tr class="separator:a2cb832adecf6061b47f73590cc6854f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a1cb8b80da0619f375e89363154d99f06" id="r_a1cb8b80da0619f375e89363154d99f06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cb8b80da0619f375e89363154d99f06">encender_bomba_agua</a> = false</td></tr>
+<tr class="separator:a1cb8b80da0619f375e89363154d99f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3cffe16905274dd9c9541300061230b" id="r_aa3cffe16905274dd9c9541300061230b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3cffe16905274dd9c9541300061230b">encender_SolBasica</a> = false</td></tr>
+<tr class="separator:aa3cffe16905274dd9c9541300061230b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1c787169bc3f74a7b97d2054e87726" id="r_acf1c787169bc3f74a7b97d2054e87726"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf1c787169bc3f74a7b97d2054e87726">encender_SolAcida</a> = false</td></tr>
+<tr class="separator:acf1c787169bc3f74a7b97d2054e87726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfddadc53a512ecc6377aea747c2573a" id="r_adfddadc53a512ecc6377aea747c2573a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfddadc53a512ecc6377aea747c2573a">valor_ph</a></td></tr>
+<tr class="separator:adfddadc53a512ecc6377aea747c2573a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf53d963ff9bf6063bc8e120de5d84c7" id="r_aaf53d963ff9bf6063bc8e120de5d84c7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf53d963ff9bf6063bc8e120de5d84c7">ph</a></td></tr>
+<tr class="separator:aaf53d963ff9bf6063bc8e120de5d84c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84a218c84521cfa29198606dbef8ef5" id="r_aa84a218c84521cfa29198606dbef8ef5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa84a218c84521cfa29198606dbef8ef5">valor_humedad</a></td></tr>
+<tr class="separator:aa84a218c84521cfa29198606dbef8ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c74e7b00b333ff10f4b34f31f655267" id="r_a0c74e7b00b333ff10f4b34f31f655267"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c74e7b00b333ff10f4b34f31f655267">conversion_humedad</a></td></tr>
+<tr class="separator:a0c74e7b00b333ff10f4b34f31f655267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3236904a68570ddc35e39a4456c34e" id="r_aba3236904a68570ddc35e39a4456c34e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba3236904a68570ddc35e39a4456c34e">valor_humedad_umbral</a> = 3.3</td></tr>
+<tr class="separator:aba3236904a68570ddc35e39a4456c34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab376b87f96a574a793c03c53e75afec8" id="r_ab376b87f96a574a793c03c53e75afec8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab376b87f96a574a793c03c53e75afec8">start</a> = false</td></tr>
+<tr class="separator:ab376b87f96a574a793c03c53e75afec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0129e079b57e897edf00f22cc25f3d4" id="r_af0129e079b57e897edf00f22cc25f3d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0129e079b57e897edf00f22cc25f3d4">hold</a> = true</td></tr>
+<tr class="separator:af0129e079b57e897edf00f22cc25f3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac49675773e8afdad9d8f3691a8abcf6a" id="r_ac49675773e8afdad9d8f3691a8abcf6a"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac49675773e8afdad9d8f3691a8abcf6a">medicion_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:ac49675773e8afdad9d8f3691a8abcf6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6d8aac1a81e3dc990e413e612ed9e3c" id="r_ac6d8aac1a81e3dc990e413e612ed9e3c"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6d8aac1a81e3dc990e413e612ed9e3c">Informar_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:ac6d8aac1a81e3dc990e413e612ed9e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="ad4c2441cf961f13d72384212f67413f4" name="ad4c2441cf961f13d72384212f67413f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c2441cf961f13d72384212f67413f4">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD_medicion_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD_medicion_US&#160;&#160;&#160;3000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00063">63</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="af4a146cb48fb9079144c487054cb9e04" name="af4a146cb48fb9079144c487054cb9e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a146cb48fb9079144c487054cb9e04">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD_medicion_US_ESTADO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD_medicion_US_ESTADO&#160;&#160;&#160;5000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00064">64</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a32f09dc6ffd60fee4ba2e4aef1564505" name="a32f09dc6ffd60fee4ba2e4aef1564505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f09dc6ffd60fee4ba2e4aef1564505">&#9670;&#160;</a></span>TOTAL_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TOTAL_BITS&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00062">62</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>.</p>
+
+</div>
+</div>
+<a id="a78bd16b40e563713bb92b7a7d0f10b98" name="a78bd16b40e563713bb92b7a7d0f10b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bd16b40e563713bb92b7a7d0f10b98">&#9670;&#160;</a></span>V_REF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define V_REF&#160;&#160;&#160;3.3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00061">61</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">187</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8h_source.html#l00038">ADC_SINGLE</a>, <a class="el" href="analog__io__mcu_8c_source.html#l00045">AnalogInputInit()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00032">CH1</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00063">CONFIG_BLINK_PERIOD_medicion_US</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00064">CONFIG_BLINK_PERIOD_medicion_US_ESTADO</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00175">encender_programa()</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00086">FuncTimerA()</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00093">FuncTimerB()</a>, <a class="el" href="gpio__mcu_8h_source.html#l00053">GPIO_1</a>, <a class="el" href="gpio__mcu_8h_source.html#l00054">GPIO_2</a>, <a class="el" href="gpio__mcu_8h_source.html#l00055">GPIO_3</a>, <a class="el" href="gpio__mcu_8h_source.html#l00044">GPIO_OUTPUT</a>, <a class="el" href="gpio__mcu_8c_source.html#l00067">GPIOInit()</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00077">Informar_task_handle</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00049">analog_input_config_t::input</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00076">medicion_task_handle</a>, <a class="el" href="ili9341_8c_source.html#l00042">NULL</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00182">parar_programa()</a>, <a class="el" href="uart__mcu_8h_source.html#l00039">serial_config_t::port</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>, <a class="el" href="switch_8h_source.html#l00032">SWITCH_1</a>, <a class="el" href="switch_8h_source.html#l00033">SWITCH_2</a>, <a class="el" href="switch_8c_source.html#l00047">SwitchActivInt()</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8h_source.html#l00033">TIMER_B</a>, <a class="el" href="timer__mcu_8c_source.html#l00055">TimerInit()</a>, <a class="el" href="timer__mcu_8c_source.html#l00110">TimerStart()</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00107">UartInit()</a>.</p>
+
+</div>
+</div>
+<a id="a2ec1dd324e085dc6c5fe58bfcfed81e6" name="a2ec1dd324e085dc6c5fe58bfcfed81e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ec1dd324e085dc6c5fe58bfcfed81e6">&#9670;&#160;</a></span>encender_programa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void encender_programa </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cambia el valor de la variable global </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00175">175</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_parcial__1__guerrero_8c_source.html#l00074">start</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="afaccfed84cd1498a05ea04a65f1209b1" name="afaccfed84cd1498a05ea04a65f1209b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaccfed84cd1498a05ea04a65f1209b1">&#9670;&#160;</a></span>FuncTimerA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerA </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>envia una notificacion a la tarea senial_medir_task, cuando el timer alcance su periodo configurado </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00086">86</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_parcial__1__guerrero_8c_source.html#l00076">medicion_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a5088c3325764095ca222dc78c328f466" name="a5088c3325764095ca222dc78c328f466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5088c3325764095ca222dc78c328f466">&#9670;&#160;</a></span>FuncTimerB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerB </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>envia una notificacion a la tarea Informar_estado_Task, cuando el timer alcance su periodo configurado </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00093">93</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_parcial__1__guerrero_8c_source.html#l00077">Informar_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a306e36cca0f2047062ca84f1af35a45a" name="a306e36cca0f2047062ca84f1af35a45a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a306e36cca0f2047062ca84f1af35a45a">&#9670;&#160;</a></span>Informar_estado_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Informar_estado_task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>toma los valores, los compara y enciende o apaga las bombas. Tambien lo envía informacion sobre esto a través de UART para su visualización. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">120</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_parcial__1__guerrero_8c_source.html#l00072">conversion_humedad</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00066">encender_bomba_agua</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00068">encender_SolAcida</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00067">encender_SolBasica</a>, <a class="el" href="gpio__mcu_8h_source.html#l00053">GPIO_1</a>, <a class="el" href="gpio__mcu_8h_source.html#l00054">GPIO_2</a>, <a class="el" href="gpio__mcu_8h_source.html#l00055">GPIO_3</a>, <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00075">hold</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00070">ph</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00222">UartItoa()</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00073">valor_humedad_umbral</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00069">valor_ph</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a2cb832adecf6061b47f73590cc6854f0" name="a2cb832adecf6061b47f73590cc6854f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb832adecf6061b47f73590cc6854f0">&#9670;&#160;</a></span>parar_programa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void parar_programa </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>cambia el valor de la variable global </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00182">182</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_parcial__1__guerrero_8c_source.html#l00075">hold</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a8cdbc79e50ebba553e69eed8ae617731" name="a8cdbc79e50ebba553e69eed8ae617731"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cdbc79e50ebba553e69eed8ae617731">&#9670;&#160;</a></span>senial_medir_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void senial_medir_task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>lee un valor de una entrada analógica y la convierte a voltios. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">100</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="analog__io__mcu_8c_source.html#l00105">AnalogInputReadSingle()</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00032">CH1</a>, <a class="el" href="analog__io__mcu_8h_source.html#l00033">CH2</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00072">conversion_humedad</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00070">ph</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00074">start</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00062">TOTAL_BITS</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00061">V_REF</a>, <a class="el" href="_parcial__1__guerrero_8c_source.html#l00071">valor_humedad</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00069">valor_ph</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="a0c74e7b00b333ff10f4b34f31f655267" name="a0c74e7b00b333ff10f4b34f31f655267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c74e7b00b333ff10f4b34f31f655267">&#9670;&#160;</a></span>conversion_humedad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float conversion_humedad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00072">72</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>.</p>
+
+</div>
+</div>
+<a id="a1cb8b80da0619f375e89363154d99f06" name="a1cb8b80da0619f375e89363154d99f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb8b80da0619f375e89363154d99f06">&#9670;&#160;</a></span>encender_bomba_agua</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool encender_bomba_agua = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00066">66</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a>.</p>
+
+</div>
+</div>
+<a id="acf1c787169bc3f74a7b97d2054e87726" name="acf1c787169bc3f74a7b97d2054e87726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf1c787169bc3f74a7b97d2054e87726">&#9670;&#160;</a></span>encender_SolAcida</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool encender_SolAcida = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00068">68</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a>.</p>
+
+</div>
+</div>
+<a id="aa3cffe16905274dd9c9541300061230b" name="aa3cffe16905274dd9c9541300061230b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3cffe16905274dd9c9541300061230b">&#9670;&#160;</a></span>encender_SolBasica</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool encender_SolBasica = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00067">67</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a>.</p>
+
+</div>
+</div>
+<a id="af0129e079b57e897edf00f22cc25f3d4" name="af0129e079b57e897edf00f22cc25f3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0129e079b57e897edf00f22cc25f3d4">&#9670;&#160;</a></span>hold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hold = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00075">75</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00182">parar_programa()</a>.</p>
+
+</div>
+</div>
+<a id="ac6d8aac1a81e3dc990e413e612ed9e3c" name="ac6d8aac1a81e3dc990e413e612ed9e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d8aac1a81e3dc990e413e612ed9e3c">&#9670;&#160;</a></span>Informar_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t Informar_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00077">77</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00093">FuncTimerB()</a>.</p>
+
+</div>
+</div>
+<a id="ac49675773e8afdad9d8f3691a8abcf6a" name="ac49675773e8afdad9d8f3691a8abcf6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac49675773e8afdad9d8f3691a8abcf6a">&#9670;&#160;</a></span>medicion_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t medicion_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00076">76</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00187">app_main()</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00086">FuncTimerA()</a>.</p>
+
+</div>
+</div>
+<a id="aaf53d963ff9bf6063bc8e120de5d84c7" name="aaf53d963ff9bf6063bc8e120de5d84c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf53d963ff9bf6063bc8e120de5d84c7">&#9670;&#160;</a></span>ph</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ph</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00070">70</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>.</p>
+
+</div>
+</div>
+<a id="ab376b87f96a574a793c03c53e75afec8" name="ab376b87f96a574a793c03c53e75afec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab376b87f96a574a793c03c53e75afec8">&#9670;&#160;</a></span>start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool start = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00074">74</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00175">encender_programa()</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>.</p>
+
+</div>
+</div>
+<a id="aa84a218c84521cfa29198606dbef8ef5" name="aa84a218c84521cfa29198606dbef8ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa84a218c84521cfa29198606dbef8ef5">&#9670;&#160;</a></span>valor_humedad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float valor_humedad</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00071">71</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>.</p>
+
+</div>
+</div>
+<a id="aba3236904a68570ddc35e39a4456c34e" name="aba3236904a68570ddc35e39a4456c34e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3236904a68570ddc35e39a4456c34e">&#9670;&#160;</a></span>valor_humedad_umbral</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float valor_humedad_umbral = 3.3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00073">73</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a>.</p>
+
+</div>
+</div>
+<a id="adfddadc53a512ecc6377aea747c2573a" name="adfddadc53a512ecc6377aea747c2573a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfddadc53a512ecc6377aea747c2573a">&#9670;&#160;</a></span>valor_ph</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float valor_ph</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_parcial__1__guerrero_8c_source.html#l00069">69</a> del archivo <a class="el" href="_parcial__1__guerrero_8c_source.html">Parcial_1_guerrero.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_parcial__1__guerrero_8c_source.html#l00120">Informar_estado_task()</a> y <a class="el" href="_parcial__1__guerrero_8c_source.html#l00100">senial_medir_task()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_50d7e1c443aa8da2c9b6e0d70a2e3322.html">Guerrero-1C-2024</a></li><li class="navelem"><a class="el" href="dir_79a6f148b0ed67998f59285a6fe39ce9.html">firmware</a></li><li class="navelem"><a class="el" href="dir_8530b4652fe966d67ccf766266308320.html">projects</a></li><li class="navelem"><a class="el" href="dir_b3f4f0b20f90ad3fbebe2afe1e29d0af.html">Parcial_1_guerrero</a></li><li class="navelem"><a class="el" href="dir_1b7dde1291bb396da9c9dad7685a130e.html">main</a></li><li class="navelem"><a class="el" href="_parcial__1__guerrero_8c.html">Parcial_1_guerrero.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
