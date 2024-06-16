@@ -2,7 +2,9 @@
  *
  * @section genDesc General Description
  *
- * This section describes how the program works.
+ * Por medio de un acelerómetro mediremos el equilibrio y la estabilidad de una persona. Los datos de inclinación en los ejes X, Y y Z 
+ * se recopilan y se envían por Bluetooth para su visualización y control del dispositivo. Se calculan estadísticas como la desviación estándar, 
+ * maximos y minimos los cuales que son útiles para evaluar el equilibrio del usuario y detectar movimientos inestables.
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
  *
