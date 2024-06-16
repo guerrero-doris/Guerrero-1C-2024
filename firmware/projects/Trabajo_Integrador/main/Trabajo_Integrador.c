@@ -58,7 +58,12 @@ float vector_datos_x[1000] = {0}; // Puntero para almacenar los datos del canal 
 float vector_datos_y[1000] = {0}; // Puntero para almacenar los datos del canal CH2
 float vector_datos_z[1000] = {0}; // Puntero para almacenar los datos del canal CH3
 int cant_muestras;
-
+/**
+ * @brief Calcula la desviación estándar de un conjunto de datos.
+ * @param vector_datos Puntero al conjunto de datos.
+ * @param longitud El número de elementos del conjunto de datos.
+ * @return  La desviación estándar de los datos. 
+ */
 float calcular_desvio_estandar(float *vector_datos, int longitud)
 {
     float media = 0.0;
@@ -79,7 +84,12 @@ float calcular_desvio_estandar(float *vector_datos, int longitud)
     float desvio_estandar = sqrtf(sumatoria_cuadrados / longitud);
     return desvio_estandar;
 }
-
+/**
+ * @brief busca el valor máximo en un conjunto de datos.
+ * @param vector Puntero al conjunto de datos de números flotantes.
+ * @param longitud El número de elementos del conjunto de datos.
+ * @return  El valor máximo encontrado en el conjunto de datos.
+ */
 float encontrar_maximo(float *vector, int longitud)
 {
     float maximo = vector[0]; // Suponemos que el primer elemento es el máximo inicialmente
@@ -92,7 +102,12 @@ float encontrar_maximo(float *vector, int longitud)
     }
     return maximo;
 }
-
+/**
+ * @brief busca el valor minimo en un conjunto de datos.
+ * @param vector Puntero al conjunto de datos de números flotantes.
+ * @param longitud El número de elementos del conjunto de datos.
+ * @return El valor minimo encontrado en el conjunto de datos.
+ */
 int encontrar_minimo(float *vector, int longitud)
 {
     float minimo = vector[0]; // Suponemos que el primer elemento es el mínimo inicialmente
@@ -107,16 +122,25 @@ int encontrar_minimo(float *vector, int longitud)
 
     return minimo;
 }
-
+/**
+ * @brief envia una notificacion a la tarea lectura_senial_task, cuando el timer alcance su periodo configurado
+ */
 void FuncTimerA(void *param)
 {
     xTaskNotifyGive(Lectura_task_handle); /* Envía una notificación */
 }
+/**
+ * @brief envia una notificacion a la tarea Verificacion_estado_task, cuando el timer alcance su periodo configurado
+ */
 void FuncTimerB(void *param)
 {
     xTaskNotifyGive(verificacion_task_handle); /* Envía una notificación */
 }
-
+/**
+ * @brief encarga de leer las señales de sensores en los ejes X, Y y Z,
+ * calcular el desvío estándar, los valores máximo y mínimo de los datos,
+ * y enviarlos por Bluetooth.
+ */
 void lectura_senial_Task(void *pvParameter)
 {
     float valor_x, valor_y, valor_z;
@@ -193,6 +217,9 @@ void lectura_senial_Task(void *pvParameter)
         }
     }
 }
+/**
+ * @brief Realiza la calibración del sensor ADXL335 si la variable de calibración está activada.
+ */
 void calibracion()
 {
     if (calibrar == true)
@@ -200,7 +227,9 @@ void calibracion()
         ADXL335Calibration();
     }
 }
-
+/**
+ * @brief Verifica el estado de la conexión Bluetooth y controla el color del NeoPixel según el estado de la conexión.
+ */
 void Verificacion_estado_Task(void *pvParameter)
 {
     while (1)
@@ -215,11 +244,17 @@ void Verificacion_estado_Task(void *pvParameter)
             NeoPixelAllColor(NEOPIXEL_COLOR_RED);
             break;
         case BLE_CONNECTED:
-            NeoPixelAllColor(NEOPIXEL_COLOR_ROSE);
+            NeoPixelAllColor(NEOPIXEL_COLOR_BLUE);
             break;
         }
     }
 }
+/**
+ * @brief Tnterpreta el primer byte del conjunto de datos 
+ * recibido y realiza diferentes acciones según el comando recibido (calibrar, start (comenzar), ver_datos)
+ * @param data Puntero al conjunto de datos que contiene el comando recibido.
+ * @param length
+ */
 void read_data(uint8_t *data, uint8_t length)
 {
     switch (data[0])
@@ -265,7 +300,8 @@ void app_main(void)
     ble_config_t ble_configuration_graficas = {
         "MEDIDOR",
         read_data};
-
+    TimerInit(&timer_estado);
+    TimerInit(&timer_medicion);
     NeoPixelInit(BUILT_IN_RGB_LED_PIN, BUILT_IN_RGB_LED_LENGTH, &color);
     NeoPixelAllOff();
     BleInit(&ble_configuration_graficas);
@@ -273,7 +309,7 @@ void app_main(void)
     xTaskCreate(&lectura_senial_Task, "senial de entrada", 2048, NULL, 5, &Lectura_task_handle);
     xTaskCreate(&Verificacion_estado_Task, "Estado de bloetoth", 2048, NULL, 5, &verificacion_task_handle);
     /* Inicialización del conteo del timer */
-    TimerStart(timer_medicion.timer);
-    TimerStart(timer_estado.timer);
+    TimerStart(TIMER_A);
+    TimerStart(TIMER_B);
 }
 /*==================[end of file]============================================*/
