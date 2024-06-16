@@ -8,10 +8,16 @@
  *
  * @section hardConn Hardware Connection
  *
- * |    Peripheral  |   ESP32   	|
+ * |  Acelerometro  |   ESP32   	|
  * |:--------------:|:--------------|
- * | 	PIN_X	 	| 	GPIO_X		|
- *
+ * | 	EJE_X	 	| 	GPIO_1		|
+ * |    EJE_Y       |   GPIO_2      |
+ * |    EJE_Z       |   GPIO_3      |
+ * |    gs1         |   GND         |
+ * |    gs2         |   3,3 v       |
+ * |    Vcc         |   3,3 v       |
+ * |    GND         |   GND         |
+ * |    SM          |   3,3 v       |
  *
  * @section changelog Changelog
  *
@@ -19,7 +25,7 @@
  * |:----------:|:-----------------------------------------------|
  * | 12/09/2023 | Document creation		                         |
  *
- * @author Albano Peñalva (albano.penalva@uner.edu.ar)
+ * @author Guerrero, Doris Micaela (doris.guerrero@ingenieria.uner.edu.ar)
  *
  */
 
@@ -194,27 +200,28 @@ void calibracion()
         ADXL335Calibration();
     }
 }
+
 void Verificacion_estado_Task(void *pvParameter)
 {
-    switch (BleStatus())
+    while (1)
     {
-    case BLE_OFF:
-        NeoPixelAllOff();
-        break;
-    case BLE_DISCONNECTED:
-        NeoPixelAllColor(NEOPIXEL_COLOR_RED);
-        break;
-    case BLE_CONNECTED:
-        NeoPixelAllColor(NEOPIXEL_COLOR_ROSE);
-        break;
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+        switch (BleStatus())
+        {
+        case BLE_OFF:
+            NeoPixelAllOff();
+            break;
+        case BLE_DISCONNECTED:
+            NeoPixelAllColor(NEOPIXEL_COLOR_RED);
+            break;
+        case BLE_CONNECTED:
+            NeoPixelAllColor(NEOPIXEL_COLOR_ROSE);
+            break;
+        }
     }
 }
 void read_data(uint8_t *data, uint8_t length)
 {
-    for (int i = 0; i < length; i++)
-    {
-        printf("%c\n", data[i]);
-    }
     switch (data[0])
     {
     case 'R':
