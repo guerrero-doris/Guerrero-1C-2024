@@ -25,7 +25,7 @@
  *
  * |   Date	    | Description                                    |
  * |:----------:|:-----------------------------------------------|
- * | 12/09/2023 | Document creation		                         |
+ * | 17/05/2024 | Document creation		                         |
  *
  * @author Guerrero, Doris Micaela (doris.guerrero@ingenieria.uner.edu.ar)
  *
