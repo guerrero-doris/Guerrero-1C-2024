@@ -2,8 +2,8 @@
  *
  * @section genDesc General Description
  *
- * Por medio de un acelerómetro mediremos el equilibrio y la estabilidad de una persona. Los datos de inclinación en los ejes X, Y y Z 
- * se recopilan y se envían por Bluetooth para su visualización y control del dispositivo. Se calculan estadísticas como la desviación estándar, 
+ * Por medio de un acelerómetro mediremos el equilibrio y la estabilidad de una persona. Los datos de inclinación en los ejes X, Y y Z
+ * se recopilan y se envían por Bluetooth para su visualización y control del dispositivo. Se calculan estadísticas como la desviación estándar,
  * maximos y minimos los cuales que son útiles para evaluar el equilibrio del usuario y detectar movimientos inestables.
  *
  * <a href="https://drive.google.com/...">Operation Example</a>
@@ -51,20 +51,30 @@
 #define CONFIG_BLINK_PERIOD_estado_US 2000
 TaskHandle_t Lectura_task_handle = NULL;
 TaskHandle_t verificacion_task_handle = NULL;
-bool Inicio_Lectura;
 bool start = false;
 bool ver_datos;
 bool calibrar = false;
-
-float vector_datos_x[1000] = {0}; // Puntero para almacenar los datos del canal CH1
-float vector_datos_y[1000] = {0}; // Puntero para almacenar los datos del canal CH2
-float vector_datos_z[1000] = {0}; // Puntero para almacenar los datos del canal CH3
+char msj_x[20];
+char msj_y[20];
+char msj_z[20];
+char msj_desvx[20];
+char msj_desvy[20];
+char msj_desvz[20];
+char msj_maxx[20];
+char msj_maxy[20];
+char msj_maxz[20];
+char msj_minx[20];
+char msj_miny[20];
+char msj_minz[20];
+float vector_datos_x[1000] = {0};
+float vector_datos_y[1000] = {0};
+float vector_datos_z[1000] = {0};
 int cant_muestras;
 /**
  * @brief Calcula la desviación estándar de un conjunto de datos.
  * @param vector_datos Puntero al conjunto de datos.
  * @param longitud El número de elementos del conjunto de datos.
- * @return  La desviación estándar de los datos. 
+ * @return  La desviación estándar de los datos.
  */
 float calcular_desvio_estandar(float *vector_datos, int longitud)
 {
@@ -139,6 +149,40 @@ void FuncTimerB(void *param)
     xTaskNotifyGive(verificacion_task_handle); /* Envía una notificación */
 }
 /**
+ * @brief Realiza la calibración del sensor ADXL335 si la variable de calibración está activada.
+ */
+void calibracion()
+{
+    if (calibrar == true)
+    {
+        ADXL335Calibration();
+    }
+}
+/**
+ * @brief Resetea los valores estadisticos a cero
+ */
+void reset()
+{
+    sprintf(msj_minx, "*A%.2f*", 0.00);
+    BleSendString(msj_minx);
+    sprintf(msj_miny, "*B%.2f*", 0.00);
+    BleSendString(msj_miny);
+    sprintf(msj_minz, "*C%.2f*", 0.00);
+    BleSendString(msj_minz);
+    sprintf(msj_maxx, "*D%.2f*", 0.00);
+    BleSendString(msj_maxx);
+    sprintf(msj_maxy, "*E%.2f*", 0.00);
+    BleSendString(msj_maxy);
+    sprintf(msj_maxz, "*F%.2f*", 0.00);
+    BleSendString(msj_maxz);
+    sprintf(msj_desvx, "*G%.2f*", 0.00);
+    BleSendString(msj_desvx);
+    sprintf(msj_desvy, "*H%.2f*", 0.00);
+    BleSendString(msj_desvy);
+    sprintf(msj_desvz, "*I%.2f*", 0.00);
+    BleSendString(msj_desvz);
+}
+/**
  * @brief encarga de leer las señales de sensores en los ejes X, Y y Z,
  * calcular el desvío estándar, los valores máximo y mínimo de los datos,
  * y enviarlos por Bluetooth.
@@ -156,77 +200,62 @@ void lectura_senial_Task(void *pvParameter)
     float maxX = 0.0;
     float maxY = 0.0;
     float maxZ = 0.0;
-    char msj[20];
     while (1)
     {
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // recibe la notificacion
-        if (start)                               // implemento la interrupcion para comenzar a tomar las medidas y detener la medicion
+
+        calibracion();
+        if (start) // implemento la interrupcion para comenzar a tomar las medidas y detener la medicion
         {
+            reset();
             valor_x = ReadXValue();
             vector_datos_x[cant_muestras] = valor_x;
             printf("valores_x %f \n", valor_x);
-            sprintf(msj, "*X%.2f*", valor_x);
-            BleSendString(msj);
+            sprintf(msj_x, "*X%.2f*", valor_x);
+            BleSendString(msj_x);
             valor_y = ReadYValue();
             printf("\n");
             vector_datos_y[cant_muestras] = valor_y;
             printf("valores_y %f \n", valor_y);
-            sprintf(msj, "*Y%.2f*", valor_y);
-            BleSendString(msj);
+            sprintf(msj_y, "*Y%.2f*", valor_y);
+            BleSendString(msj_y);
             valor_z = ReadZValue();
             vector_datos_z[cant_muestras] = valor_z;
             printf("valores_z %f \n", valor_z);
+            sprintf(msj_z, "*Z%.2f*", valor_z);
+            BleSendString(msj_z);
             cant_muestras++;
         }
         if (ver_datos)
         {
             desvioX = calcular_desvio_estandar(vector_datos_x, cant_muestras);
-            sprintf(msj, "G%.2f*", desvioX);
-            sprintf(msj, "*G%.2f*", desvioX);
-            BleSendString(msj);
+            sprintf(msj_desvx, "*G%.2f*", desvioX);
+            BleSendString(msj_desvx);
             desvioY = calcular_desvio_estandar(vector_datos_y, cant_muestras);
-            sprintf(msj, "H%.2f*", desvioY);
-            sprintf(msj, "*H%.2f*", desvioY);
-            BleSendString(msj);
+            sprintf(msj_desvy, "*H%.2f*", desvioY);
+            BleSendString(msj_desvy);
             desvioZ = calcular_desvio_estandar(vector_datos_z, cant_muestras);
-            sprintf(msj, "I%.2f*", desvioZ);
-            sprintf(msj, "*I%.2f*", desvioZ);
-            BleSendString(msj);
+            sprintf(msj_desvz, "*I%.2f*", desvioZ);
+            BleSendString(msj_desvz);
             maxX = encontrar_maximo(vector_datos_x, cant_muestras);
-            sprintf(msj, "A%.2f*", maxX);
-            sprintf(msj, "*A%.2f*", maxX);
-            BleSendString(msj);
+            sprintf(msj_maxx, "*A%.2f*", maxX);
+            BleSendString(msj_maxx);
             maxY = encontrar_maximo(vector_datos_y, cant_muestras);
-            sprintf(msj, "B%.2f*", maxY); // este
-            sprintf(msj, "*B%.2f*", maxY);
-            BleSendString(msj);
+            sprintf(msj_maxy, "*B%.2f*", maxY);
+            BleSendString(msj_maxy);
             maxZ = encontrar_maximo(vector_datos_z, cant_muestras);
-            sprintf(msj, "C%.2f*", maxZ);
-            sprintf(msj, "*C%.2f*", maxZ);
-            BleSendString(msj);
+            sprintf(msj_maxz, "*C%.2f*", maxZ);
+            BleSendString(msj_maxz);
             minX = encontrar_minimo(vector_datos_x, cant_muestras);
-            sprintf(msj, "D%.2f*", minX);
-            sprintf(msj, "*D%.2f*", minX);
-            BleSendString(msj);
+            sprintf(msj_minx, "*D%.2f*", minX);
+            BleSendString(msj_minx);
             minY = encontrar_minimo(vector_datos_y, cant_muestras);
-            sprintf(msj, "E%.2f*", minY);
-            sprintf(msj, "*E%.2f*", minY);
-            BleSendString(msj);
+            sprintf(msj_miny, "*E%.2f*", minY);
+            BleSendString(msj_miny);
             minZ = encontrar_minimo(vector_datos_z, cant_muestras);
-            sprintf(msj, "F%.2f*", minZ);
-            sprintf(msj, "*F%.2f*", minZ);
-            BleSendString(msj);
+            sprintf(msj_minz, "*F%.2f*", minZ);
+            BleSendString(msj_minz);
         }
-    }
-}
-/**
- * @brief Realiza la calibración del sensor ADXL335 si la variable de calibración está activada.
- */
-void calibracion()
-{
-    if (calibrar == true)
-    {
-        ADXL335Calibration();
     }
 }
 /**
@@ -252,7 +281,7 @@ void Verificacion_estado_Task(void *pvParameter)
     }
 }
 /**
- * @brief Tnterpreta el primer byte del conjunto de datos 
+ * @brief Tnterpreta el primer byte del conjunto de datos
  * recibido y realiza diferentes acciones según el comando recibido (calibrar, start (comenzar), ver_datos)
  * @param data Puntero al conjunto de datos que contiene el comando recibido.
  * @param length
