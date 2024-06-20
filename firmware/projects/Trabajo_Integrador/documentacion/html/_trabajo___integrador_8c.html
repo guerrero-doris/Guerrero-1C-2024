@@ -1,0 +1,952 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabajo_Integrador: Referencia del archivo C:/Repositorios/Guerrero-1C-2024/firmware/projects/Trabajo_Integrador/main/Trabajo_Integrador.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Trabajo_Integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_trabajo___integrador_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">defines</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del archivo Trabajo_Integrador.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="analog__io__mcu_8h_source.html">analog_io_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;math.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+<code>#include &quot;ble_mcu.h&quot;</code><br />
+<code>#include &quot;ADXL335.h&quot;</code><br />
+<code>#include &quot;string.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="neopixel__stripe_8h_source.html">neopixel_stripe.h</a>&quot;</code><br />
+</div>
+<p><a href="_trabajo___integrador_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:ad4c2441cf961f13d72384212f67413f4" id="r_ad4c2441cf961f13d72384212f67413f4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4c2441cf961f13d72384212f67413f4">CONFIG_BLINK_PERIOD_medicion_US</a>&#160;&#160;&#160;3000</td></tr>
+<tr class="separator:ad4c2441cf961f13d72384212f67413f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aea1cf4b9b2a8d279d76fa71025d376" id="r_a2aea1cf4b9b2a8d279d76fa71025d376"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aea1cf4b9b2a8d279d76fa71025d376">CONFIG_BLINK_PERIOD_estado_US</a>&#160;&#160;&#160;2000</td></tr>
+<tr class="separator:a2aea1cf4b9b2a8d279d76fa71025d376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ad8910c80f98f58a30918fc8f466dbaf3" id="r_ad8910c80f98f58a30918fc8f466dbaf3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8910c80f98f58a30918fc8f466dbaf3">calcular_desvio_estandar</a> (float *vector_datos, int longitud)</td></tr>
+<tr class="memdesc:ad8910c80f98f58a30918fc8f466dbaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula la desviación estándar de un conjunto de datos.  <br /></td></tr>
+<tr class="separator:ad8910c80f98f58a30918fc8f466dbaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d89a896d0b6169740b6c064e0d654b" id="r_ac1d89a896d0b6169740b6c064e0d654b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1d89a896d0b6169740b6c064e0d654b">encontrar_maximo</a> (float *vector, int longitud)</td></tr>
+<tr class="memdesc:ac1d89a896d0b6169740b6c064e0d654b"><td class="mdescLeft">&#160;</td><td class="mdescRight">busca el valor máximo en un conjunto de datos.  <br /></td></tr>
+<tr class="separator:ac1d89a896d0b6169740b6c064e0d654b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726c7ef8597ebd4521e4ba831c924355" id="r_a726c7ef8597ebd4521e4ba831c924355"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a726c7ef8597ebd4521e4ba831c924355">encontrar_minimo</a> (float *vector, int longitud)</td></tr>
+<tr class="memdesc:a726c7ef8597ebd4521e4ba831c924355"><td class="mdescLeft">&#160;</td><td class="mdescRight">busca el valor minimo en un conjunto de datos.  <br /></td></tr>
+<tr class="separator:a726c7ef8597ebd4521e4ba831c924355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaccfed84cd1498a05ea04a65f1209b1" id="r_afaccfed84cd1498a05ea04a65f1209b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afaccfed84cd1498a05ea04a65f1209b1">FuncTimerA</a> (void *param)</td></tr>
+<tr class="memdesc:afaccfed84cd1498a05ea04a65f1209b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">envia una notificacion a la tarea lectura_senial_task, cuando el timer alcance su periodo configurado  <br /></td></tr>
+<tr class="separator:afaccfed84cd1498a05ea04a65f1209b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5088c3325764095ca222dc78c328f466" id="r_a5088c3325764095ca222dc78c328f466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5088c3325764095ca222dc78c328f466">FuncTimerB</a> (void *param)</td></tr>
+<tr class="memdesc:a5088c3325764095ca222dc78c328f466"><td class="mdescLeft">&#160;</td><td class="mdescRight">envia una notificacion a la tarea Verificacion_estado_task, cuando el timer alcance su periodo configurado  <br /></td></tr>
+<tr class="separator:a5088c3325764095ca222dc78c328f466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee49561b63585462ba369d5840e2f7e" id="r_a5ee49561b63585462ba369d5840e2f7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ee49561b63585462ba369d5840e2f7e">calibracion</a> ()</td></tr>
+<tr class="memdesc:a5ee49561b63585462ba369d5840e2f7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Realiza la calibración del sensor ADXL335 si la variable de calibración está activada.  <br /></td></tr>
+<tr class="separator:a5ee49561b63585462ba369d5840e2f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20897c5c8bd47f5d4005989bead0e55" id="r_ad20897c5c8bd47f5d4005989bead0e55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad20897c5c8bd47f5d4005989bead0e55">reset</a> ()</td></tr>
+<tr class="memdesc:ad20897c5c8bd47f5d4005989bead0e55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resetea los valores estadisticos a cero.  <br /></td></tr>
+<tr class="separator:ad20897c5c8bd47f5d4005989bead0e55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412420a3be875e77dfe47847feeebd81" id="r_a412420a3be875e77dfe47847feeebd81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a412420a3be875e77dfe47847feeebd81">lectura_senial_Task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a412420a3be875e77dfe47847feeebd81"><td class="mdescLeft">&#160;</td><td class="mdescRight">encarga de leer las señales de sensores en los ejes X, Y y Z, calcular el desvío estándar, los valores máximo y mínimo de los datos, y enviarlos por Bluetooth.  <br /></td></tr>
+<tr class="separator:a412420a3be875e77dfe47847feeebd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bbcb1c2e307122294681cf8043784d3" id="r_a2bbcb1c2e307122294681cf8043784d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bbcb1c2e307122294681cf8043784d3">Verificacion_estado_Task</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a2bbcb1c2e307122294681cf8043784d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica el estado de la conexión Bluetooth y controla el color del NeoPixel según el estado de la conexión.  <br /></td></tr>
+<tr class="separator:a2bbcb1c2e307122294681cf8043784d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab56e1ff0f71e003f2e08c6ec294528b1" id="r_ab56e1ff0f71e003f2e08c6ec294528b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a> (uint8_t *data, uint8_t length)</td></tr>
+<tr class="memdesc:ab56e1ff0f71e003f2e08c6ec294528b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tnterpreta el primer byte del conjunto de datos recibido y realiza diferentes acciones según el comando recibido (calibrar, start (comenzar), ver_datos)  <br /></td></tr>
+<tr class="separator:ab56e1ff0f71e003f2e08c6ec294528b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="separator:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a92f0ad6de22fdaae0898ec28ed787079" id="r_a92f0ad6de22fdaae0898ec28ed787079"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92f0ad6de22fdaae0898ec28ed787079">Lectura_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:a92f0ad6de22fdaae0898ec28ed787079"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd49d01749116a88a9f96f81d64a903" id="r_aafd49d01749116a88a9f96f81d64a903"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafd49d01749116a88a9f96f81d64a903">verificacion_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="separator:aafd49d01749116a88a9f96f81d64a903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab376b87f96a574a793c03c53e75afec8" id="r_ab376b87f96a574a793c03c53e75afec8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab376b87f96a574a793c03c53e75afec8">start</a> = false</td></tr>
+<tr class="separator:ab376b87f96a574a793c03c53e75afec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140610f79e573c6051f7c869a803cb3e" id="r_a140610f79e573c6051f7c869a803cb3e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a140610f79e573c6051f7c869a803cb3e">ver_datos</a></td></tr>
+<tr class="separator:a140610f79e573c6051f7c869a803cb3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba3ce5d498ea5709730cb1368b4e9fea" id="r_aba3ce5d498ea5709730cb1368b4e9fea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aba3ce5d498ea5709730cb1368b4e9fea">calibrar</a> = false</td></tr>
+<tr class="separator:aba3ce5d498ea5709730cb1368b4e9fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24956ca718e209af84fda9e6655e07b7" id="r_a24956ca718e209af84fda9e6655e07b7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24956ca718e209af84fda9e6655e07b7">msj_x</a> [20]</td></tr>
+<tr class="separator:a24956ca718e209af84fda9e6655e07b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eda4734e913364474d7c5f790ae7546" id="r_a8eda4734e913364474d7c5f790ae7546"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8eda4734e913364474d7c5f790ae7546">msj_y</a> [20]</td></tr>
+<tr class="separator:a8eda4734e913364474d7c5f790ae7546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99a73c95e11502df2a03e19c48f2d89b" id="r_a99a73c95e11502df2a03e19c48f2d89b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99a73c95e11502df2a03e19c48f2d89b">msj_z</a> [20]</td></tr>
+<tr class="separator:a99a73c95e11502df2a03e19c48f2d89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af14bbe05857ea4f38b23139eae9273c5" id="r_af14bbe05857ea4f38b23139eae9273c5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af14bbe05857ea4f38b23139eae9273c5">msj_desvx</a> [20]</td></tr>
+<tr class="separator:af14bbe05857ea4f38b23139eae9273c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01bfd234b373f8b2f3192af5c55bc65f" id="r_a01bfd234b373f8b2f3192af5c55bc65f"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01bfd234b373f8b2f3192af5c55bc65f">msj_desvy</a> [20]</td></tr>
+<tr class="separator:a01bfd234b373f8b2f3192af5c55bc65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b50da54e8679196856e67c06a08ce4" id="r_ac9b50da54e8679196856e67c06a08ce4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9b50da54e8679196856e67c06a08ce4">msj_desvz</a> [20]</td></tr>
+<tr class="separator:ac9b50da54e8679196856e67c06a08ce4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f2ae1cb2c35618d9cfc3563eed068b" id="r_af2f2ae1cb2c35618d9cfc3563eed068b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2f2ae1cb2c35618d9cfc3563eed068b">msj_maxx</a> [20]</td></tr>
+<tr class="separator:af2f2ae1cb2c35618d9cfc3563eed068b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4137d7824648141d357a9b75b4155423" id="r_a4137d7824648141d357a9b75b4155423"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4137d7824648141d357a9b75b4155423">msj_maxy</a> [20]</td></tr>
+<tr class="separator:a4137d7824648141d357a9b75b4155423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a734a365b29e289142da3b51f5c82b7c8" id="r_a734a365b29e289142da3b51f5c82b7c8"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a734a365b29e289142da3b51f5c82b7c8">msj_maxz</a> [20]</td></tr>
+<tr class="separator:a734a365b29e289142da3b51f5c82b7c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac431f209134b6f38eb2d48c65dca8ae5" id="r_ac431f209134b6f38eb2d48c65dca8ae5"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac431f209134b6f38eb2d48c65dca8ae5">msj_minx</a> [20]</td></tr>
+<tr class="separator:ac431f209134b6f38eb2d48c65dca8ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648b3249445560c49210b8e9091f0c04" id="r_a648b3249445560c49210b8e9091f0c04"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a648b3249445560c49210b8e9091f0c04">msj_miny</a> [20]</td></tr>
+<tr class="separator:a648b3249445560c49210b8e9091f0c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70043835acac827033b4e6762700c6db" id="r_a70043835acac827033b4e6762700c6db"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70043835acac827033b4e6762700c6db">msj_minz</a> [20]</td></tr>
+<tr class="separator:a70043835acac827033b4e6762700c6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c1b8a2e7ccde893eb513910b8dbef71" id="r_a5c1b8a2e7ccde893eb513910b8dbef71"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c1b8a2e7ccde893eb513910b8dbef71">vector_datos_x</a> [1000] = {0}</td></tr>
+<tr class="separator:a5c1b8a2e7ccde893eb513910b8dbef71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a604ad479f4f651725d79b1e50df1b1" id="r_a2a604ad479f4f651725d79b1e50df1b1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a604ad479f4f651725d79b1e50df1b1">vector_datos_y</a> [1000] = {0}</td></tr>
+<tr class="separator:a2a604ad479f4f651725d79b1e50df1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ebef5e561de32e286b094fa18952c68" id="r_a1ebef5e561de32e286b094fa18952c68"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ebef5e561de32e286b094fa18952c68">vector_datos_z</a> [1000] = {0}</td></tr>
+<tr class="separator:a1ebef5e561de32e286b094fa18952c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae883284e703d1744d97ad64636b6c8d9" id="r_ae883284e703d1744d97ad64636b6c8d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a></td></tr>
+<tr class="separator:ae883284e703d1744d97ad64636b6c8d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentación de «define»</h2>
+<a id="a2aea1cf4b9b2a8d279d76fa71025d376" name="a2aea1cf4b9b2a8d279d76fa71025d376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2aea1cf4b9b2a8d279d76fa71025d376">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD_estado_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD_estado_US&#160;&#160;&#160;2000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00051">51</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ad4c2441cf961f13d72384212f67413f4" name="ad4c2441cf961f13d72384212f67413f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c2441cf961f13d72384212f67413f4">&#9670;&#160;</a></span>CONFIG_BLINK_PERIOD_medicion_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_BLINK_PERIOD_medicion_US&#160;&#160;&#160;3000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00050">50</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00313">313</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="neopixel__stripe_8h_source.html#l00034">BUILT_IN_RGB_LED_LENGTH</a>, <a class="el" href="neopixel__stripe_8h_source.html#l00033">BUILT_IN_RGB_LED_PIN</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00051">CONFIG_BLINK_PERIOD_estado_US</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00050">CONFIG_BLINK_PERIOD_medicion_US</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00140">FuncTimerA()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00147">FuncTimerB()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00052">Lectura_task_handle</a>, <a class="el" href="neopixel__stripe_8c_source.html#l00044">NeoPixelAllOff()</a>, <a class="el" href="neopixel__stripe_8c_source.html#l00038">NeoPixelInit()</a>, <a class="el" href="ili9341_8c_source.html#l00042">NULL</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00289">read_data()</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8h_source.html#l00033">TIMER_B</a>, <a class="el" href="timer__mcu_8c_source.html#l00055">TimerInit()</a>, <a class="el" href="timer__mcu_8c_source.html#l00110">TimerStart()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00264">Verificacion_estado_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00053">verificacion_task_handle</a>.</p>
+
+</div>
+</div>
+<a id="ad8910c80f98f58a30918fc8f466dbaf3" name="ad8910c80f98f58a30918fc8f466dbaf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8910c80f98f58a30918fc8f466dbaf3">&#9670;&#160;</a></span>calcular_desvio_estandar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float calcular_desvio_estandar </td>
+          <td>(</td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>vector_datos</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>longitud</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula la desviación estándar de un conjunto de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector_datos</td><td>Puntero al conjunto de datos. </td></tr>
+    <tr><td class="paramname">longitud</td><td>El número de elementos del conjunto de datos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>La desviación estándar de los datos. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00079">79</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a5ee49561b63585462ba369d5840e2f7e" name="a5ee49561b63585462ba369d5840e2f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee49561b63585462ba369d5840e2f7e">&#9670;&#160;</a></span>calibracion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void calibracion </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Realiza la calibración del sensor ADXL335 si la variable de calibración está activada. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00154">154</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_trabajo___integrador_8c_source.html#l00056">calibrar</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="ac1d89a896d0b6169740b6c064e0d654b" name="ac1d89a896d0b6169740b6c064e0d654b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d89a896d0b6169740b6c064e0d654b">&#9670;&#160;</a></span>encontrar_maximo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float encontrar_maximo </td>
+          <td>(</td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>vector</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>longitud</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>busca el valor máximo en un conjunto de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Puntero al conjunto de datos de números flotantes. </td></tr>
+    <tr><td class="paramname">longitud</td><td>El número de elementos del conjunto de datos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El valor máximo encontrado en el conjunto de datos. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00105">105</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a726c7ef8597ebd4521e4ba831c924355" name="a726c7ef8597ebd4521e4ba831c924355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726c7ef8597ebd4521e4ba831c924355">&#9670;&#160;</a></span>encontrar_minimo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int encontrar_minimo </td>
+          <td>(</td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>vector</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>longitud</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>busca el valor minimo en un conjunto de datos. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Puntero al conjunto de datos de números flotantes. </td></tr>
+    <tr><td class="paramname">longitud</td><td>El número de elementos del conjunto de datos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>El valor minimo encontrado en el conjunto de datos. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00123">123</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="afaccfed84cd1498a05ea04a65f1209b1" name="afaccfed84cd1498a05ea04a65f1209b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaccfed84cd1498a05ea04a65f1209b1">&#9670;&#160;</a></span>FuncTimerA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerA </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>envia una notificacion a la tarea lectura_senial_task, cuando el timer alcance su periodo configurado </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00140">140</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_trabajo___integrador_8c_source.html#l00052">Lectura_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a5088c3325764095ca222dc78c328f466" name="a5088c3325764095ca222dc78c328f466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5088c3325764095ca222dc78c328f466">&#9670;&#160;</a></span>FuncTimerB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerB </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>envia una notificacion a la tarea Verificacion_estado_task, cuando el timer alcance su periodo configurado </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00147">147</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_trabajo___integrador_8c_source.html#l00053">verificacion_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a412420a3be875e77dfe47847feeebd81" name="a412420a3be875e77dfe47847feeebd81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412420a3be875e77dfe47847feeebd81">&#9670;&#160;</a></span>lectura_senial_Task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lectura_senial_Task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>encarga de leer las señales de sensores en los ejes X, Y y Z, calcular el desvío estándar, los valores máximo y mínimo de los datos, y enviarlos por Bluetooth. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00190">190</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_trabajo___integrador_8c_source.html#l00079">calcular_desvio_estandar()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00154">calibracion()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00072">cant_muestras</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00105">encontrar_maximo()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00123">encontrar_minimo()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00060">msj_desvx</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00061">msj_desvy</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00062">msj_desvz</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00063">msj_maxx</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00064">msj_maxy</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00065">msj_maxz</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00066">msj_minx</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00067">msj_miny</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00068">msj_minz</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00057">msj_x</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00058">msj_y</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00059">msj_z</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00054">start</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00069">vector_datos_x</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00070">vector_datos_y</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00071">vector_datos_z</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00055">ver_datos</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ab56e1ff0f71e003f2e08c6ec294528b1" name="ab56e1ff0f71e003f2e08c6ec294528b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab56e1ff0f71e003f2e08c6ec294528b1">&#9670;&#160;</a></span>read_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void read_data </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tnterpreta el primer byte del conjunto de datos recibido y realiza diferentes acciones según el comando recibido (calibrar, start (comenzar), ver_datos) </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Puntero al conjunto de datos que contiene el comando recibido. </td></tr>
+    <tr><td class="paramname">length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00289">289</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_trabajo___integrador_8c_source.html#l00056">calibrar</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00054">start</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00055">ver_datos</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ad20897c5c8bd47f5d4005989bead0e55" name="ad20897c5c8bd47f5d4005989bead0e55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20897c5c8bd47f5d4005989bead0e55">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resetea los valores estadisticos a cero. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00164">164</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_trabajo___integrador_8c_source.html#l00060">msj_desvx</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00061">msj_desvy</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00062">msj_desvz</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00063">msj_maxx</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00064">msj_maxy</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00065">msj_maxz</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00066">msj_minx</a>, <a class="el" href="_trabajo___integrador_8c_source.html#l00067">msj_miny</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00068">msj_minz</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a2bbcb1c2e307122294681cf8043784d3" name="a2bbcb1c2e307122294681cf8043784d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bbcb1c2e307122294681cf8043784d3">&#9670;&#160;</a></span>Verificacion_estado_Task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Verificacion_estado_Task </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica el estado de la conexión Bluetooth y controla el color del NeoPixel según el estado de la conexión. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00264">264</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="neopixel__stripe_8h_source.html#l00045">NEOPIXEL_COLOR_BLUE</a>, <a class="el" href="neopixel__stripe_8h_source.html#l00037">NEOPIXEL_COLOR_RED</a>, <a class="el" href="neopixel__stripe_8c_source.html#l00055">NeoPixelAllColor()</a> y <a class="el" href="neopixel__stripe_8c_source.html#l00044">NeoPixelAllOff()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentación de variables</h2>
+<a id="aba3ce5d498ea5709730cb1368b4e9fea" name="aba3ce5d498ea5709730cb1368b4e9fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba3ce5d498ea5709730cb1368b4e9fea">&#9670;&#160;</a></span>calibrar</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool calibrar = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00056">56</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00154">calibracion()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00289">read_data()</a>.</p>
+
+</div>
+</div>
+<a id="ae883284e703d1744d97ad64636b6c8d9" name="ae883284e703d1744d97ad64636b6c8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae883284e703d1744d97ad64636b6c8d9">&#9670;&#160;</a></span>cant_muestras</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cant_muestras</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00072">72</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a92f0ad6de22fdaae0898ec28ed787079" name="a92f0ad6de22fdaae0898ec28ed787079"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92f0ad6de22fdaae0898ec28ed787079">&#9670;&#160;</a></span>Lectura_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t Lectura_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00052">52</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00140">FuncTimerA()</a>.</p>
+
+</div>
+</div>
+<a id="af14bbe05857ea4f38b23139eae9273c5" name="af14bbe05857ea4f38b23139eae9273c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af14bbe05857ea4f38b23139eae9273c5">&#9670;&#160;</a></span>msj_desvx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_desvx[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00060">60</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="a01bfd234b373f8b2f3192af5c55bc65f" name="a01bfd234b373f8b2f3192af5c55bc65f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01bfd234b373f8b2f3192af5c55bc65f">&#9670;&#160;</a></span>msj_desvy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_desvy[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00061">61</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="ac9b50da54e8679196856e67c06a08ce4" name="ac9b50da54e8679196856e67c06a08ce4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b50da54e8679196856e67c06a08ce4">&#9670;&#160;</a></span>msj_desvz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_desvz[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00062">62</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="af2f2ae1cb2c35618d9cfc3563eed068b" name="af2f2ae1cb2c35618d9cfc3563eed068b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f2ae1cb2c35618d9cfc3563eed068b">&#9670;&#160;</a></span>msj_maxx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_maxx[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00063">63</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="a4137d7824648141d357a9b75b4155423" name="a4137d7824648141d357a9b75b4155423"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4137d7824648141d357a9b75b4155423">&#9670;&#160;</a></span>msj_maxy</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_maxy[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00064">64</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="a734a365b29e289142da3b51f5c82b7c8" name="a734a365b29e289142da3b51f5c82b7c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a734a365b29e289142da3b51f5c82b7c8">&#9670;&#160;</a></span>msj_maxz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_maxz[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00065">65</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="ac431f209134b6f38eb2d48c65dca8ae5" name="ac431f209134b6f38eb2d48c65dca8ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac431f209134b6f38eb2d48c65dca8ae5">&#9670;&#160;</a></span>msj_minx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_minx[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00066">66</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="a648b3249445560c49210b8e9091f0c04" name="a648b3249445560c49210b8e9091f0c04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a648b3249445560c49210b8e9091f0c04">&#9670;&#160;</a></span>msj_miny</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_miny[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00067">67</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="a70043835acac827033b4e6762700c6db" name="a70043835acac827033b4e6762700c6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70043835acac827033b4e6762700c6db">&#9670;&#160;</a></span>msj_minz</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_minz[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00068">68</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00164">reset()</a>.</p>
+
+</div>
+</div>
+<a id="a24956ca718e209af84fda9e6655e07b7" name="a24956ca718e209af84fda9e6655e07b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24956ca718e209af84fda9e6655e07b7">&#9670;&#160;</a></span>msj_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_x[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00057">57</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a8eda4734e913364474d7c5f790ae7546" name="a8eda4734e913364474d7c5f790ae7546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8eda4734e913364474d7c5f790ae7546">&#9670;&#160;</a></span>msj_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_y[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00058">58</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a99a73c95e11502df2a03e19c48f2d89b" name="a99a73c95e11502df2a03e19c48f2d89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99a73c95e11502df2a03e19c48f2d89b">&#9670;&#160;</a></span>msj_z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msj_z[20]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00059">59</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="ab376b87f96a574a793c03c53e75afec8" name="ab376b87f96a574a793c03c53e75afec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab376b87f96a574a793c03c53e75afec8">&#9670;&#160;</a></span>start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool start = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00054">54</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00289">read_data()</a>.</p>
+
+</div>
+</div>
+<a id="a5c1b8a2e7ccde893eb513910b8dbef71" name="a5c1b8a2e7ccde893eb513910b8dbef71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c1b8a2e7ccde893eb513910b8dbef71">&#9670;&#160;</a></span>vector_datos_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vector_datos_x[1000] = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00069">69</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a2a604ad479f4f651725d79b1e50df1b1" name="a2a604ad479f4f651725d79b1e50df1b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a604ad479f4f651725d79b1e50df1b1">&#9670;&#160;</a></span>vector_datos_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vector_datos_y[1000] = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00070">70</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a1ebef5e561de32e286b094fa18952c68" name="a1ebef5e561de32e286b094fa18952c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ebef5e561de32e286b094fa18952c68">&#9670;&#160;</a></span>vector_datos_z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float vector_datos_z[1000] = {0}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00071">71</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a>.</p>
+
+</div>
+</div>
+<a id="a140610f79e573c6051f7c869a803cb3e" name="a140610f79e573c6051f7c869a803cb3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140610f79e573c6051f7c869a803cb3e">&#9670;&#160;</a></span>ver_datos</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ver_datos</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00055">55</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00190">lectura_senial_Task()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00289">read_data()</a>.</p>
+
+</div>
+</div>
+<a id="aafd49d01749116a88a9f96f81d64a903" name="aafd49d01749116a88a9f96f81d64a903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafd49d01749116a88a9f96f81d64a903">&#9670;&#160;</a></span>verificacion_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t verificacion_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_trabajo___integrador_8c_source.html#l00053">53</a> del archivo <a class="el" href="_trabajo___integrador_8c_source.html">Trabajo_Integrador.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_trabajo___integrador_8c_source.html#l00313">app_main()</a> y <a class="el" href="_trabajo___integrador_8c_source.html#l00147">FuncTimerB()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_50d7e1c443aa8da2c9b6e0d70a2e3322.html">Guerrero-1C-2024</a></li><li class="navelem"><a class="el" href="dir_79a6f148b0ed67998f59285a6fe39ce9.html">firmware</a></li><li class="navelem"><a class="el" href="dir_8530b4652fe966d67ccf766266308320.html">projects</a></li><li class="navelem"><a class="el" href="dir_7fd2a46472a5ca75fc3bf2a81b2e5f61.html">Trabajo_Integrador</a></li><li class="navelem"><a class="el" href="dir_e9b966975096758139e2731027f7f31b.html">main</a></li><li class="navelem"><a class="el" href="_trabajo___integrador_8c.html">Trabajo_Integrador.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Trabajo_Integrador: Archivo de código fuente C:/Repositorios/Guerrero-1C-2024/firmware/projects/Trabajo_Integrador/main/Trabajo_Integrador.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Trabajo_Integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('_trabajo___integrador_8c_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Trabajo_Integrador.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_trabajo___integrador_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="timer__mcu_8h.html">timer_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;<a class="code" href="uart__mcu_8h.html">uart_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;<a class="code" href="analog__io__mcu_8h.html">analog_io_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &quot;<a class="code" href="gpio__mcu_8h.html">gpio_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &quot;math.h&quot;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &quot;<a class="code" href="switch_8h.html">switch.h</a>&quot;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &quot;ble_mcu.h&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &quot;ADXL335.h&quot;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &quot;string.h&quot;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &quot;<a class="code" href="neopixel__stripe_8h.html">neopixel_stripe.h</a>&quot;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ad4c2441cf961f13d72384212f67413f4">   50</a></span><span class="preprocessor">#define CONFIG_BLINK_PERIOD_medicion_US 3000</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a2aea1cf4b9b2a8d279d76fa71025d376">   51</a></span><span class="preprocessor">#define CONFIG_BLINK_PERIOD_estado_US 2000</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a92f0ad6de22fdaae0898ec28ed787079">   52</a></span>TaskHandle_t <a class="code hl_variable" href="_trabajo___integrador_8c.html#a92f0ad6de22fdaae0898ec28ed787079">Lectura_task_handle</a> = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#aafd49d01749116a88a9f96f81d64a903">   53</a></span>TaskHandle_t <a class="code hl_variable" href="_trabajo___integrador_8c.html#aafd49d01749116a88a9f96f81d64a903">verificacion_task_handle</a> = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ab376b87f96a574a793c03c53e75afec8">   54</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#ab376b87f96a574a793c03c53e75afec8">start</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a140610f79e573c6051f7c869a803cb3e">   55</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a140610f79e573c6051f7c869a803cb3e">ver_datos</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#aba3ce5d498ea5709730cb1368b4e9fea">   56</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#aba3ce5d498ea5709730cb1368b4e9fea">calibrar</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a24956ca718e209af84fda9e6655e07b7">   57</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a24956ca718e209af84fda9e6655e07b7">msj_x</a>[20];</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a8eda4734e913364474d7c5f790ae7546">   58</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a8eda4734e913364474d7c5f790ae7546">msj_y</a>[20];</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a99a73c95e11502df2a03e19c48f2d89b">   59</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a99a73c95e11502df2a03e19c48f2d89b">msj_z</a>[20];</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#af14bbe05857ea4f38b23139eae9273c5">   60</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#af14bbe05857ea4f38b23139eae9273c5">msj_desvx</a>[20];</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a01bfd234b373f8b2f3192af5c55bc65f">   61</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a01bfd234b373f8b2f3192af5c55bc65f">msj_desvy</a>[20];</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ac9b50da54e8679196856e67c06a08ce4">   62</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#ac9b50da54e8679196856e67c06a08ce4">msj_desvz</a>[20];</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#af2f2ae1cb2c35618d9cfc3563eed068b">   63</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#af2f2ae1cb2c35618d9cfc3563eed068b">msj_maxx</a>[20];</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a4137d7824648141d357a9b75b4155423">   64</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a4137d7824648141d357a9b75b4155423">msj_maxy</a>[20];</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a734a365b29e289142da3b51f5c82b7c8">   65</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a734a365b29e289142da3b51f5c82b7c8">msj_maxz</a>[20];</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ac431f209134b6f38eb2d48c65dca8ae5">   66</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#ac431f209134b6f38eb2d48c65dca8ae5">msj_minx</a>[20];</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a648b3249445560c49210b8e9091f0c04">   67</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a648b3249445560c49210b8e9091f0c04">msj_miny</a>[20];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a70043835acac827033b4e6762700c6db">   68</a></span><span class="keywordtype">char</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a70043835acac827033b4e6762700c6db">msj_minz</a>[20];</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a5c1b8a2e7ccde893eb513910b8dbef71">   69</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a5c1b8a2e7ccde893eb513910b8dbef71">vector_datos_x</a>[1000] = {0};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a2a604ad479f4f651725d79b1e50df1b1">   70</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a2a604ad479f4f651725d79b1e50df1b1">vector_datos_y</a>[1000] = {0};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a1ebef5e561de32e286b094fa18952c68">   71</a></span><span class="keywordtype">float</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#a1ebef5e561de32e286b094fa18952c68">vector_datos_z</a>[1000] = {0};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">   72</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>;</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ad8910c80f98f58a30918fc8f466dbaf3">   79</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#ad8910c80f98f58a30918fc8f466dbaf3">calcular_desvio_estandar</a>(<span class="keywordtype">float</span> *vector_datos, <span class="keywordtype">int</span> longitud)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">float</span> media = 0.0;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">float</span> sumatoria_cuadrados = 0.0;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">// Calcular la media de los datos</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; longitud; i++)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        media += vector_datos[i];</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    media /= longitud;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// Calcular la sumatoria de los cuadrados de las diferencias</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; longitud; i++)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        sumatoria_cuadrados += powf(vector_datos[i] - media, 2);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">// Calcular el desvío estándar</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordtype">float</span> desvio_estandar = sqrtf(sumatoria_cuadrados / longitud);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">return</span> desvio_estandar;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ac1d89a896d0b6169740b6c064e0d654b">  105</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#ac1d89a896d0b6169740b6c064e0d654b">encontrar_maximo</a>(<span class="keywordtype">float</span> *vector, <span class="keywordtype">int</span> longitud)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordtype">float</span> maximo = vector[0]; <span class="comment">// Suponemos que el primer elemento es el máximo inicialmente</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; longitud; i++)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keywordflow">if</span> (vector[i] &gt; maximo)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            maximo = vector[i];</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> maximo;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a726c7ef8597ebd4521e4ba831c924355">  123</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#a726c7ef8597ebd4521e4ba831c924355">encontrar_minimo</a>(<span class="keywordtype">float</span> *vector, <span class="keywordtype">int</span> longitud)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">float</span> minimo = vector[0]; <span class="comment">// Suponemos que el primer elemento es el mínimo inicialmente</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; longitud; i++)</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">if</span> (vector[i] &lt; minimo)</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            minimo = vector[i];</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> minimo;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00140" data-start="{" data-end="}">
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#afaccfed84cd1498a05ea04a65f1209b1">  140</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#afaccfed84cd1498a05ea04a65f1209b1">FuncTimerA</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>{</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    xTaskNotifyGive(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a92f0ad6de22fdaae0898ec28ed787079">Lectura_task_handle</a>); <span class="comment">/* Envía una notificación */</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a5088c3325764095ca222dc78c328f466">  147</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#a5088c3325764095ca222dc78c328f466">FuncTimerB</a>(<span class="keywordtype">void</span> *param)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>{</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    xTaskNotifyGive(<a class="code hl_variable" href="_trabajo___integrador_8c.html#aafd49d01749116a88a9f96f81d64a903">verificacion_task_handle</a>); <span class="comment">/* Envía una notificación */</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a5ee49561b63585462ba369d5840e2f7e">  154</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#a5ee49561b63585462ba369d5840e2f7e">calibracion</a>()</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>{</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="_trabajo___integrador_8c.html#aba3ce5d498ea5709730cb1368b4e9fea">calibrar</a> == <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        ADXL335Calibration();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ad20897c5c8bd47f5d4005989bead0e55">  164</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#ad20897c5c8bd47f5d4005989bead0e55">reset</a>()</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>{</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac431f209134b6f38eb2d48c65dca8ae5">msj_minx</a>, <span class="stringliteral">&quot;*A%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac431f209134b6f38eb2d48c65dca8ae5">msj_minx</a>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a648b3249445560c49210b8e9091f0c04">msj_miny</a>, <span class="stringliteral">&quot;*B%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a648b3249445560c49210b8e9091f0c04">msj_miny</a>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a70043835acac827033b4e6762700c6db">msj_minz</a>, <span class="stringliteral">&quot;*C%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a70043835acac827033b4e6762700c6db">msj_minz</a>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af2f2ae1cb2c35618d9cfc3563eed068b">msj_maxx</a>, <span class="stringliteral">&quot;*D%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af2f2ae1cb2c35618d9cfc3563eed068b">msj_maxx</a>);</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a4137d7824648141d357a9b75b4155423">msj_maxy</a>, <span class="stringliteral">&quot;*E%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a4137d7824648141d357a9b75b4155423">msj_maxy</a>);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a734a365b29e289142da3b51f5c82b7c8">msj_maxz</a>, <span class="stringliteral">&quot;*F%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a734a365b29e289142da3b51f5c82b7c8">msj_maxz</a>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af14bbe05857ea4f38b23139eae9273c5">msj_desvx</a>, <span class="stringliteral">&quot;*G%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af14bbe05857ea4f38b23139eae9273c5">msj_desvx</a>);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a01bfd234b373f8b2f3192af5c55bc65f">msj_desvy</a>, <span class="stringliteral">&quot;*H%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a01bfd234b373f8b2f3192af5c55bc65f">msj_desvy</a>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac9b50da54e8679196856e67c06a08ce4">msj_desvz</a>, <span class="stringliteral">&quot;*I%.2f*&quot;</span>, 0.00);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac9b50da54e8679196856e67c06a08ce4">msj_desvz</a>);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a412420a3be875e77dfe47847feeebd81">  190</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#a412420a3be875e77dfe47847feeebd81">lectura_senial_Task</a>(<span class="keywordtype">void</span> *pvParameter)</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>{</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordtype">float</span> valor_x, valor_y, valor_z;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a> = 0; <span class="comment">// Número actual de muestras capturadas, para tomar las de interes</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordtype">float</span> desvioX = 0.0;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordtype">float</span> desvioY = 0.0;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordtype">float</span> desvioZ = 0.0;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordtype">float</span> minX = 0.0;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordtype">float</span> minY = 0.0;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordtype">float</span> minZ = 0.0;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">float</span> maxX = 0.0;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordtype">float</span> maxY = 0.0;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">float</span> maxZ = 0.0;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY); <span class="comment">// recibe la notificacion</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <a class="code hl_function" href="_trabajo___integrador_8c.html#a5ee49561b63585462ba369d5840e2f7e">calibracion</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_trabajo___integrador_8c.html#ab376b87f96a574a793c03c53e75afec8">start</a>) <span class="comment">// implemento la interrupcion para comenzar a tomar las medidas y detener la medicion</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <a class="code hl_function" href="_trabajo___integrador_8c.html#ad20897c5c8bd47f5d4005989bead0e55">reset</a>();</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            valor_x = ReadXValue();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <a class="code hl_variable" href="_trabajo___integrador_8c.html#a5c1b8a2e7ccde893eb513910b8dbef71">vector_datos_x</a>[<a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>] = valor_x;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            printf(<span class="stringliteral">&quot;valores_x %f \n&quot;</span>, valor_x);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a24956ca718e209af84fda9e6655e07b7">msj_x</a>, <span class="stringliteral">&quot;*X%.2f*&quot;</span>, valor_x);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a24956ca718e209af84fda9e6655e07b7">msj_x</a>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            valor_y = ReadYValue();</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>            printf(<span class="stringliteral">&quot;\n&quot;</span>);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <a class="code hl_variable" href="_trabajo___integrador_8c.html#a2a604ad479f4f651725d79b1e50df1b1">vector_datos_y</a>[<a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>] = valor_y;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            printf(<span class="stringliteral">&quot;valores_y %f \n&quot;</span>, valor_y);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a8eda4734e913364474d7c5f790ae7546">msj_y</a>, <span class="stringliteral">&quot;*Y%.2f*&quot;</span>, valor_y);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a8eda4734e913364474d7c5f790ae7546">msj_y</a>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            valor_z = ReadZValue();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>            <a class="code hl_variable" href="_trabajo___integrador_8c.html#a1ebef5e561de32e286b094fa18952c68">vector_datos_z</a>[<a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>] = valor_z;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            printf(<span class="stringliteral">&quot;valores_z %f \n&quot;</span>, valor_z);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a99a73c95e11502df2a03e19c48f2d89b">msj_z</a>, <span class="stringliteral">&quot;*Z%.2f*&quot;</span>, valor_z);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a99a73c95e11502df2a03e19c48f2d89b">msj_z</a>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>++;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_trabajo___integrador_8c.html#a140610f79e573c6051f7c869a803cb3e">ver_datos</a>)</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            desvioX = <a class="code hl_function" href="_trabajo___integrador_8c.html#ad8910c80f98f58a30918fc8f466dbaf3">calcular_desvio_estandar</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a5c1b8a2e7ccde893eb513910b8dbef71">vector_datos_x</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af14bbe05857ea4f38b23139eae9273c5">msj_desvx</a>, <span class="stringliteral">&quot;*G%.2f*&quot;</span>, desvioX);</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af14bbe05857ea4f38b23139eae9273c5">msj_desvx</a>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            desvioY = <a class="code hl_function" href="_trabajo___integrador_8c.html#ad8910c80f98f58a30918fc8f466dbaf3">calcular_desvio_estandar</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a2a604ad479f4f651725d79b1e50df1b1">vector_datos_y</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a01bfd234b373f8b2f3192af5c55bc65f">msj_desvy</a>, <span class="stringliteral">&quot;*H%.2f*&quot;</span>, desvioY);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a01bfd234b373f8b2f3192af5c55bc65f">msj_desvy</a>);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            desvioZ = <a class="code hl_function" href="_trabajo___integrador_8c.html#ad8910c80f98f58a30918fc8f466dbaf3">calcular_desvio_estandar</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a1ebef5e561de32e286b094fa18952c68">vector_datos_z</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac9b50da54e8679196856e67c06a08ce4">msj_desvz</a>, <span class="stringliteral">&quot;*I%.2f*&quot;</span>, desvioZ);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac9b50da54e8679196856e67c06a08ce4">msj_desvz</a>);</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            maxX = <a class="code hl_function" href="_trabajo___integrador_8c.html#ac1d89a896d0b6169740b6c064e0d654b">encontrar_maximo</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a5c1b8a2e7ccde893eb513910b8dbef71">vector_datos_x</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af2f2ae1cb2c35618d9cfc3563eed068b">msj_maxx</a>, <span class="stringliteral">&quot;*A%.2f*&quot;</span>, maxX);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#af2f2ae1cb2c35618d9cfc3563eed068b">msj_maxx</a>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            maxY = <a class="code hl_function" href="_trabajo___integrador_8c.html#ac1d89a896d0b6169740b6c064e0d654b">encontrar_maximo</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a2a604ad479f4f651725d79b1e50df1b1">vector_datos_y</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a4137d7824648141d357a9b75b4155423">msj_maxy</a>, <span class="stringliteral">&quot;*B%.2f*&quot;</span>, maxY);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a4137d7824648141d357a9b75b4155423">msj_maxy</a>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            maxZ = <a class="code hl_function" href="_trabajo___integrador_8c.html#ac1d89a896d0b6169740b6c064e0d654b">encontrar_maximo</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a1ebef5e561de32e286b094fa18952c68">vector_datos_z</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a734a365b29e289142da3b51f5c82b7c8">msj_maxz</a>, <span class="stringliteral">&quot;*C%.2f*&quot;</span>, maxZ);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a734a365b29e289142da3b51f5c82b7c8">msj_maxz</a>);</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            minX = <a class="code hl_function" href="_trabajo___integrador_8c.html#a726c7ef8597ebd4521e4ba831c924355">encontrar_minimo</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a5c1b8a2e7ccde893eb513910b8dbef71">vector_datos_x</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac431f209134b6f38eb2d48c65dca8ae5">msj_minx</a>, <span class="stringliteral">&quot;*D%.2f*&quot;</span>, minX);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#ac431f209134b6f38eb2d48c65dca8ae5">msj_minx</a>);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            minY = <a class="code hl_function" href="_trabajo___integrador_8c.html#a726c7ef8597ebd4521e4ba831c924355">encontrar_minimo</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a2a604ad479f4f651725d79b1e50df1b1">vector_datos_y</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a648b3249445560c49210b8e9091f0c04">msj_miny</a>, <span class="stringliteral">&quot;*E%.2f*&quot;</span>, minY);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a648b3249445560c49210b8e9091f0c04">msj_miny</a>);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            minZ = <a class="code hl_function" href="_trabajo___integrador_8c.html#a726c7ef8597ebd4521e4ba831c924355">encontrar_minimo</a>(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a1ebef5e561de32e286b094fa18952c68">vector_datos_z</a>, <a class="code hl_variable" href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a>);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>            sprintf(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a70043835acac827033b4e6762700c6db">msj_minz</a>, <span class="stringliteral">&quot;*F%.2f*&quot;</span>, minZ);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            BleSendString(<a class="code hl_variable" href="_trabajo___integrador_8c.html#a70043835acac827033b4e6762700c6db">msj_minz</a>);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        }</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00264" data-start="{" data-end="}">
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a2bbcb1c2e307122294681cf8043784d3">  264</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#a2bbcb1c2e307122294681cf8043784d3">Verificacion_estado_Task</a>(<span class="keywordtype">void</span> *pvParameter)</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>{</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">switch</span> (BleStatus())</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        <span class="keywordflow">case</span> BLE_OFF:</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            <a class="code hl_function" href="group___neo_pixel___stripe.html#ga7eda8ecf6370a5af575af2ca85eafa6d">NeoPixelAllOff</a>();</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keywordflow">case</span> BLE_DISCONNECTED:</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            <a class="code hl_function" href="group___neo_pixel___stripe.html#ga00aedd9bd24d607244a314348180bdb8">NeoPixelAllColor</a>(<a class="code hl_define" href="group___neo_pixel___stripe.html#ga2e1dcc1fe1f1ec8488bc4185597108f2">NEOPIXEL_COLOR_RED</a>);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <span class="keywordflow">case</span> BLE_CONNECTED:</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            <a class="code hl_function" href="group___neo_pixel___stripe.html#ga00aedd9bd24d607244a314348180bdb8">NeoPixelAllColor</a>(<a class="code hl_define" href="group___neo_pixel___stripe.html#ga0b34bb5f5ac15880f7ee287053559470">NEOPIXEL_COLOR_BLUE</a>);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00289" data-start="{" data-end="}">
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">  289</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a>(uint8_t *data, uint8_t length)</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>{</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">switch</span> (data[0])</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;R&#39;</span>:</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        <a class="code hl_variable" href="_trabajo___integrador_8c.html#ab376b87f96a574a793c03c53e75afec8">start</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;r&#39;</span>:</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        <a class="code hl_variable" href="_trabajo___integrador_8c.html#ab376b87f96a574a793c03c53e75afec8">start</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>:</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <a class="code hl_variable" href="_trabajo___integrador_8c.html#a140610f79e573c6051f7c869a803cb3e">ver_datos</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;b&#39;</span>:</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <a class="code hl_variable" href="_trabajo___integrador_8c.html#a140610f79e573c6051f7c869a803cb3e">ver_datos</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span>:</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        <a class="code hl_variable" href="_trabajo___integrador_8c.html#aba3ce5d498ea5709730cb1368b4e9fea">calibrar</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <a class="code hl_variable" href="_trabajo___integrador_8c.html#aba3ce5d498ea5709730cb1368b4e9fea">calibrar</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>}</div>
+</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="foldopen" id="foldopen00313" data-start="{" data-end="}">
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno"><a class="line" href="_trabajo___integrador_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">  313</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_trabajo___integrador_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>{</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keyword">static</span> <a class="code hl_typedef" href="group___neo_pixel___stripe.html#ga46c58082e9d85e6503e36f0e2306bb39">neopixel_color_t</a> color;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    ADXL335Init();</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_medicion = {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        .<a class="code hl_variable" href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer</a> = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a>,</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        .period = <a class="code hl_define" href="_trabajo___integrador_8c.html#ad4c2441cf961f13d72384212f67413f4">CONFIG_BLINK_PERIOD_medicion_US</a>,</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        .func_p = <a class="code hl_function" href="_trabajo___integrador_8c.html#afaccfed84cd1498a05ea04a65f1209b1">FuncTimerA</a>,</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>};</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_medicion);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_estado = {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>        .<a class="code hl_variable" href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer</a> = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a>,</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>        .period = <a class="code hl_define" href="_trabajo___integrador_8c.html#a2aea1cf4b9b2a8d279d76fa71025d376">CONFIG_BLINK_PERIOD_estado_US</a>,</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        .func_p = <a class="code hl_function" href="_trabajo___integrador_8c.html#a5088c3325764095ca222dc78c328f466">FuncTimerB</a>,</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>};</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_estado);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="comment">// configuracion de bluetooth</span></div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    ble_config_t ble_configuration_graficas = {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>        <span class="stringliteral">&quot;MEDIDOR&quot;</span>,</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <a class="code hl_function" href="_trabajo___integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a>};</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_estado);</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_medicion);</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <a class="code hl_function" href="group___neo_pixel___stripe.html#ga1dd960cb0564070aae4f05d455a21942">NeoPixelInit</a>(<a class="code hl_define" href="group___neo_pixel___stripe.html#ga1585c41d4e31451e1ba0899672251fd0">BUILT_IN_RGB_LED_PIN</a>, <a class="code hl_define" href="group___neo_pixel___stripe.html#ga6671e70ff1d2d50e9051e81cc1f99223">BUILT_IN_RGB_LED_LENGTH</a>, &amp;color);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <a class="code hl_function" href="group___neo_pixel___stripe.html#ga7eda8ecf6370a5af575af2ca85eafa6d">NeoPixelAllOff</a>();</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    BleInit(&amp;ble_configuration_graficas);</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="comment">/* Creación de tareas */</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    xTaskCreate(&amp;<a class="code hl_function" href="_trabajo___integrador_8c.html#a412420a3be875e77dfe47847feeebd81">lectura_senial_Task</a>, <span class="stringliteral">&quot;senial de entrada&quot;</span>, 2048, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, &amp;<a class="code hl_variable" href="_trabajo___integrador_8c.html#a92f0ad6de22fdaae0898ec28ed787079">Lectura_task_handle</a>);</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    xTaskCreate(&amp;<a class="code hl_function" href="_trabajo___integrador_8c.html#a2bbcb1c2e307122294681cf8043784d3">Verificacion_estado_Task</a>, <span class="stringliteral">&quot;Estado de bloetoth&quot;</span>, 2048, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, &amp;<a class="code hl_variable" href="_trabajo___integrador_8c.html#aafd49d01749116a88a9f96f81d64a903">verificacion_task_handle</a>);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="comment">/* Inicialización del conteo del timer */</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(<a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a>);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(<a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a>);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>}</div>
+</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span><span class="comment">/*==================[end of file]============================================*/</span></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a01bfd234b373f8b2f3192af5c55bc65f"><div class="ttname"><a href="_trabajo___integrador_8c.html#a01bfd234b373f8b2f3192af5c55bc65f">msj_desvy</a></div><div class="ttdeci">char msj_desvy[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00061">Trabajo_Integrador.c:61</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a140610f79e573c6051f7c869a803cb3e"><div class="ttname"><a href="_trabajo___integrador_8c.html#a140610f79e573c6051f7c869a803cb3e">ver_datos</a></div><div class="ttdeci">bool ver_datos</div><div class="ttdef"><b>Definition</b> <a href="#l00055">Trabajo_Integrador.c:55</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a1ebef5e561de32e286b094fa18952c68"><div class="ttname"><a href="_trabajo___integrador_8c.html#a1ebef5e561de32e286b094fa18952c68">vector_datos_z</a></div><div class="ttdeci">float vector_datos_z[1000]</div><div class="ttdef"><b>Definition</b> <a href="#l00071">Trabajo_Integrador.c:71</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a24956ca718e209af84fda9e6655e07b7"><div class="ttname"><a href="_trabajo___integrador_8c.html#a24956ca718e209af84fda9e6655e07b7">msj_x</a></div><div class="ttdeci">char msj_x[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00057">Trabajo_Integrador.c:57</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a2a604ad479f4f651725d79b1e50df1b1"><div class="ttname"><a href="_trabajo___integrador_8c.html#a2a604ad479f4f651725d79b1e50df1b1">vector_datos_y</a></div><div class="ttdeci">float vector_datos_y[1000]</div><div class="ttdef"><b>Definition</b> <a href="#l00070">Trabajo_Integrador.c:70</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a2aea1cf4b9b2a8d279d76fa71025d376"><div class="ttname"><a href="_trabajo___integrador_8c.html#a2aea1cf4b9b2a8d279d76fa71025d376">CONFIG_BLINK_PERIOD_estado_US</a></div><div class="ttdeci">#define CONFIG_BLINK_PERIOD_estado_US</div><div class="ttdef"><b>Definition</b> <a href="#l00051">Trabajo_Integrador.c:51</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a2bbcb1c2e307122294681cf8043784d3"><div class="ttname"><a href="_trabajo___integrador_8c.html#a2bbcb1c2e307122294681cf8043784d3">Verificacion_estado_Task</a></div><div class="ttdeci">void Verificacion_estado_Task(void *pvParameter)</div><div class="ttdoc">Verifica el estado de la conexión Bluetooth y controla el color del NeoPixel según el estado de la co...</div><div class="ttdef"><b>Definition</b> <a href="#l00264">Trabajo_Integrador.c:264</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a412420a3be875e77dfe47847feeebd81"><div class="ttname"><a href="_trabajo___integrador_8c.html#a412420a3be875e77dfe47847feeebd81">lectura_senial_Task</a></div><div class="ttdeci">void lectura_senial_Task(void *pvParameter)</div><div class="ttdoc">encarga de leer las señales de sensores en los ejes X, Y y Z, calcular el desvío estándar,...</div><div class="ttdef"><b>Definition</b> <a href="#l00190">Trabajo_Integrador.c:190</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a4137d7824648141d357a9b75b4155423"><div class="ttname"><a href="_trabajo___integrador_8c.html#a4137d7824648141d357a9b75b4155423">msj_maxy</a></div><div class="ttdeci">char msj_maxy[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00064">Trabajo_Integrador.c:64</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a5088c3325764095ca222dc78c328f466"><div class="ttname"><a href="_trabajo___integrador_8c.html#a5088c3325764095ca222dc78c328f466">FuncTimerB</a></div><div class="ttdeci">void FuncTimerB(void *param)</div><div class="ttdoc">envia una notificacion a la tarea Verificacion_estado_task, cuando el timer alcance su periodo config...</div><div class="ttdef"><b>Definition</b> <a href="#l00147">Trabajo_Integrador.c:147</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a5c1b8a2e7ccde893eb513910b8dbef71"><div class="ttname"><a href="_trabajo___integrador_8c.html#a5c1b8a2e7ccde893eb513910b8dbef71">vector_datos_x</a></div><div class="ttdeci">float vector_datos_x[1000]</div><div class="ttdef"><b>Definition</b> <a href="#l00069">Trabajo_Integrador.c:69</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a5ee49561b63585462ba369d5840e2f7e"><div class="ttname"><a href="_trabajo___integrador_8c.html#a5ee49561b63585462ba369d5840e2f7e">calibracion</a></div><div class="ttdeci">void calibracion()</div><div class="ttdoc">Realiza la calibración del sensor ADXL335 si la variable de calibración está activada.</div><div class="ttdef"><b>Definition</b> <a href="#l00154">Trabajo_Integrador.c:154</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a630544a7f0a2cc40d8a7fefab7e2fe70"><div class="ttname"><a href="_trabajo___integrador_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a></div><div class="ttdeci">void app_main(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00313">Trabajo_Integrador.c:313</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a648b3249445560c49210b8e9091f0c04"><div class="ttname"><a href="_trabajo___integrador_8c.html#a648b3249445560c49210b8e9091f0c04">msj_miny</a></div><div class="ttdeci">char msj_miny[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00067">Trabajo_Integrador.c:67</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a70043835acac827033b4e6762700c6db"><div class="ttname"><a href="_trabajo___integrador_8c.html#a70043835acac827033b4e6762700c6db">msj_minz</a></div><div class="ttdeci">char msj_minz[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00068">Trabajo_Integrador.c:68</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a726c7ef8597ebd4521e4ba831c924355"><div class="ttname"><a href="_trabajo___integrador_8c.html#a726c7ef8597ebd4521e4ba831c924355">encontrar_minimo</a></div><div class="ttdeci">int encontrar_minimo(float *vector, int longitud)</div><div class="ttdoc">busca el valor minimo en un conjunto de datos.</div><div class="ttdef"><b>Definition</b> <a href="#l00123">Trabajo_Integrador.c:123</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a734a365b29e289142da3b51f5c82b7c8"><div class="ttname"><a href="_trabajo___integrador_8c.html#a734a365b29e289142da3b51f5c82b7c8">msj_maxz</a></div><div class="ttdeci">char msj_maxz[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00065">Trabajo_Integrador.c:65</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a8eda4734e913364474d7c5f790ae7546"><div class="ttname"><a href="_trabajo___integrador_8c.html#a8eda4734e913364474d7c5f790ae7546">msj_y</a></div><div class="ttdeci">char msj_y[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Trabajo_Integrador.c:58</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a92f0ad6de22fdaae0898ec28ed787079"><div class="ttname"><a href="_trabajo___integrador_8c.html#a92f0ad6de22fdaae0898ec28ed787079">Lectura_task_handle</a></div><div class="ttdeci">TaskHandle_t Lectura_task_handle</div><div class="ttdef"><b>Definition</b> <a href="#l00052">Trabajo_Integrador.c:52</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_a99a73c95e11502df2a03e19c48f2d89b"><div class="ttname"><a href="_trabajo___integrador_8c.html#a99a73c95e11502df2a03e19c48f2d89b">msj_z</a></div><div class="ttdeci">char msj_z[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00059">Trabajo_Integrador.c:59</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_aafd49d01749116a88a9f96f81d64a903"><div class="ttname"><a href="_trabajo___integrador_8c.html#aafd49d01749116a88a9f96f81d64a903">verificacion_task_handle</a></div><div class="ttdeci">TaskHandle_t verificacion_task_handle</div><div class="ttdef"><b>Definition</b> <a href="#l00053">Trabajo_Integrador.c:53</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ab376b87f96a574a793c03c53e75afec8"><div class="ttname"><a href="_trabajo___integrador_8c.html#ab376b87f96a574a793c03c53e75afec8">start</a></div><div class="ttdeci">bool start</div><div class="ttdef"><b>Definition</b> <a href="#l00054">Trabajo_Integrador.c:54</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ab56e1ff0f71e003f2e08c6ec294528b1"><div class="ttname"><a href="_trabajo___integrador_8c.html#ab56e1ff0f71e003f2e08c6ec294528b1">read_data</a></div><div class="ttdeci">void read_data(uint8_t *data, uint8_t length)</div><div class="ttdoc">Tnterpreta el primer byte del conjunto de datos recibido y realiza diferentes acciones según el coman...</div><div class="ttdef"><b>Definition</b> <a href="#l00289">Trabajo_Integrador.c:289</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_aba3ce5d498ea5709730cb1368b4e9fea"><div class="ttname"><a href="_trabajo___integrador_8c.html#aba3ce5d498ea5709730cb1368b4e9fea">calibrar</a></div><div class="ttdeci">bool calibrar</div><div class="ttdef"><b>Definition</b> <a href="#l00056">Trabajo_Integrador.c:56</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ac1d89a896d0b6169740b6c064e0d654b"><div class="ttname"><a href="_trabajo___integrador_8c.html#ac1d89a896d0b6169740b6c064e0d654b">encontrar_maximo</a></div><div class="ttdeci">float encontrar_maximo(float *vector, int longitud)</div><div class="ttdoc">busca el valor máximo en un conjunto de datos.</div><div class="ttdef"><b>Definition</b> <a href="#l00105">Trabajo_Integrador.c:105</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ac431f209134b6f38eb2d48c65dca8ae5"><div class="ttname"><a href="_trabajo___integrador_8c.html#ac431f209134b6f38eb2d48c65dca8ae5">msj_minx</a></div><div class="ttdeci">char msj_minx[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Trabajo_Integrador.c:66</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ac9b50da54e8679196856e67c06a08ce4"><div class="ttname"><a href="_trabajo___integrador_8c.html#ac9b50da54e8679196856e67c06a08ce4">msj_desvz</a></div><div class="ttdeci">char msj_desvz[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00062">Trabajo_Integrador.c:62</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ad20897c5c8bd47f5d4005989bead0e55"><div class="ttname"><a href="_trabajo___integrador_8c.html#ad20897c5c8bd47f5d4005989bead0e55">reset</a></div><div class="ttdeci">void reset()</div><div class="ttdoc">Resetea los valores estadisticos a cero.</div><div class="ttdef"><b>Definition</b> <a href="#l00164">Trabajo_Integrador.c:164</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ad4c2441cf961f13d72384212f67413f4"><div class="ttname"><a href="_trabajo___integrador_8c.html#ad4c2441cf961f13d72384212f67413f4">CONFIG_BLINK_PERIOD_medicion_US</a></div><div class="ttdeci">#define CONFIG_BLINK_PERIOD_medicion_US</div><div class="ttdef"><b>Definition</b> <a href="#l00050">Trabajo_Integrador.c:50</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ad8910c80f98f58a30918fc8f466dbaf3"><div class="ttname"><a href="_trabajo___integrador_8c.html#ad8910c80f98f58a30918fc8f466dbaf3">calcular_desvio_estandar</a></div><div class="ttdeci">float calcular_desvio_estandar(float *vector_datos, int longitud)</div><div class="ttdoc">Calcula la desviación estándar de un conjunto de datos.</div><div class="ttdef"><b>Definition</b> <a href="#l00079">Trabajo_Integrador.c:79</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_ae883284e703d1744d97ad64636b6c8d9"><div class="ttname"><a href="_trabajo___integrador_8c.html#ae883284e703d1744d97ad64636b6c8d9">cant_muestras</a></div><div class="ttdeci">int cant_muestras</div><div class="ttdef"><b>Definition</b> <a href="#l00072">Trabajo_Integrador.c:72</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_af14bbe05857ea4f38b23139eae9273c5"><div class="ttname"><a href="_trabajo___integrador_8c.html#af14bbe05857ea4f38b23139eae9273c5">msj_desvx</a></div><div class="ttdeci">char msj_desvx[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00060">Trabajo_Integrador.c:60</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_af2f2ae1cb2c35618d9cfc3563eed068b"><div class="ttname"><a href="_trabajo___integrador_8c.html#af2f2ae1cb2c35618d9cfc3563eed068b">msj_maxx</a></div><div class="ttdeci">char msj_maxx[20]</div><div class="ttdef"><b>Definition</b> <a href="#l00063">Trabajo_Integrador.c:63</a></div></div>
+<div class="ttc" id="a_trabajo___integrador_8c_html_afaccfed84cd1498a05ea04a65f1209b1"><div class="ttname"><a href="_trabajo___integrador_8c.html#afaccfed84cd1498a05ea04a65f1209b1">FuncTimerA</a></div><div class="ttdeci">void FuncTimerA(void *param)</div><div class="ttdoc">envia una notificacion a la tarea lectura_senial_task, cuando el timer alcance su periodo configurado</div><div class="ttdef"><b>Definition</b> <a href="#l00140">Trabajo_Integrador.c:140</a></div></div>
+<div class="ttc" id="aanalog__io__mcu_8h_html"><div class="ttname"><a href="analog__io__mcu_8h.html">analog_io_mcu.h</a></div></div>
+<div class="ttc" id="agpio__mcu_8h_html"><div class="ttname"><a href="gpio__mcu_8h.html">gpio_mcu.h</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga00aedd9bd24d607244a314348180bdb8"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga00aedd9bd24d607244a314348180bdb8">NeoPixelAllColor</a></div><div class="ttdeci">void NeoPixelAllColor(neopixel_color_t color)</div><div class="ttdoc">Change all NeoPixels in the stripe to the same color.</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8c_source.html#l00055">neopixel_stripe.c:55</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga0b34bb5f5ac15880f7ee287053559470"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga0b34bb5f5ac15880f7ee287053559470">NEOPIXEL_COLOR_BLUE</a></div><div class="ttdeci">#define NEOPIXEL_COLOR_BLUE</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8h_source.html#l00045">neopixel_stripe.h:45</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga1585c41d4e31451e1ba0899672251fd0"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga1585c41d4e31451e1ba0899672251fd0">BUILT_IN_RGB_LED_PIN</a></div><div class="ttdeci">#define BUILT_IN_RGB_LED_PIN</div><div class="ttdoc">NeoPixel driver for the ESP-EDU Board.</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8h_source.html#l00033">neopixel_stripe.h:33</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga1dd960cb0564070aae4f05d455a21942"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga1dd960cb0564070aae4f05d455a21942">NeoPixelInit</a></div><div class="ttdeci">void NeoPixelInit(gpio_t pin, uint16_t len, neopixel_color_t *color_array)</div><div class="ttdoc">NeoPixel array initialization.</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8c_source.html#l00038">neopixel_stripe.c:38</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga2e1dcc1fe1f1ec8488bc4185597108f2"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga2e1dcc1fe1f1ec8488bc4185597108f2">NEOPIXEL_COLOR_RED</a></div><div class="ttdeci">#define NEOPIXEL_COLOR_RED</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8h_source.html#l00037">neopixel_stripe.h:37</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga46c58082e9d85e6503e36f0e2306bb39"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga46c58082e9d85e6503e36f0e2306bb39">neopixel_color_t</a></div><div class="ttdeci">uint32_t neopixel_color_t</div><div class="ttdoc">24 bits color</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8h_source.html#l00071">neopixel_stripe.h:71</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga6671e70ff1d2d50e9051e81cc1f99223"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga6671e70ff1d2d50e9051e81cc1f99223">BUILT_IN_RGB_LED_LENGTH</a></div><div class="ttdeci">#define BUILT_IN_RGB_LED_LENGTH</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8h_source.html#l00034">neopixel_stripe.h:34</a></div></div>
+<div class="ttc" id="agroup___neo_pixel___stripe_html_ga7eda8ecf6370a5af575af2ca85eafa6d"><div class="ttname"><a href="group___neo_pixel___stripe.html#ga7eda8ecf6370a5af575af2ca85eafa6d">NeoPixelAllOff</a></div><div class="ttdeci">void NeoPixelAllOff(void)</div><div class="ttdoc">Turn off all NeoPixels.</div><div class="ttdef"><b>Definition</b> <a href="neopixel__stripe_8c_source.html#l00044">neopixel_stripe.c:44</a></div></div>
+<div class="ttc" id="agroup___timer_html_ga0b1779c5b8f91cc83c8bfd127071ea2f"><div class="ttname"><a href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a></div><div class="ttdeci">void TimerStart(timer_mcu_t timer)</div><div class="ttdoc">Start timer count.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00110">timer_mcu.c:110</a></div></div>
+<div class="ttc" id="agroup___timer_html_gae8617c0d176463a60441464ad26563f6"><div class="ttname"><a href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a></div><div class="ttdeci">void TimerInit(timer_config_t *timer_ini)</div><div class="ttdoc">Timer initialization.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00055">timer_mcu.c:55</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a></div><div class="ttdeci">@ TIMER_A</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00032">timer_mcu.h:32</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a></div><div class="ttdeci">@ TIMER_B</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00033">timer_mcu.h:33</a></div></div>
+<div class="ttc" id="aili9341_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> <a href="ili9341_8c_source.html#l00042">ili9341.c:42</a></div></div>
+<div class="ttc" id="aneopixel__stripe_8h_html"><div class="ttname"><a href="neopixel__stripe_8h.html">neopixel_stripe.h</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html"><div class="ttname"><a href="structtimer__config__t.html">timer_config_t</a></div><div class="ttdoc">Timer configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00039">timer_mcu.h:39</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html_ab83043b8038c5e630f6a2a05ea007e49"><div class="ttname"><a href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer_config_t::timer</a></div><div class="ttdeci">timer_mcu_t timer</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00040">timer_mcu.h:40</a></div></div>
+<div class="ttc" id="aswitch_8h_html"><div class="ttname"><a href="switch_8h.html">switch.h</a></div></div>
+<div class="ttc" id="atimer__mcu_8h_html"><div class="ttname"><a href="timer__mcu_8h.html">timer_mcu.h</a></div></div>
+<div class="ttc" id="auart__mcu_8h_html"><div class="ttname"><a href="uart__mcu_8h.html">uart_mcu.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_50d7e1c443aa8da2c9b6e0d70a2e3322.html">Guerrero-1C-2024</a></li><li class="navelem"><a class="el" href="dir_79a6f148b0ed67998f59285a6fe39ce9.html">firmware</a></li><li class="navelem"><a class="el" href="dir_8530b4652fe966d67ccf766266308320.html">projects</a></li><li class="navelem"><a class="el" href="dir_7fd2a46472a5ca75fc3bf2a81b2e5f61.html">Trabajo_Integrador</a></li><li class="navelem"><a class="el" href="dir_e9b966975096758139e2731027f7f31b.html">main</a></li><li class="navelem"><a class="el" href="_trabajo___integrador_8c.html">Trabajo_Integrador.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+  </ul>
+</div>
+</body>
+</html>
